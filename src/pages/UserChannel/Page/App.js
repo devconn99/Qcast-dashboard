@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import uuid from "uuid";
+import {v1 as uuid} from "uuid";
 
 import "./styles.css";
 
