@@ -45,6 +45,7 @@ const UserHomeQcasts = () => {
                 txtSubTitle = {item.subTitle}
                 txtSubContent={item.subContent}
                 viewCount={item.viewCount}
+                buttonValue={"+ Add"}
               />
             </div>
           )}

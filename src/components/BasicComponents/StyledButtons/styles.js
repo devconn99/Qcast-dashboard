@@ -83,13 +83,31 @@ export default StyleSheet.create({
 
 	// StyledButtonSimpleFluid
 	simpleButtonFluid: {
-		width: "300px",
+		width: "100%",
 		height: "100%",
 		background: "Linear-gradient(135.07deg, #F1F9FF 6.66%, #DCE8F7 104.83%);",
 		boxShadow:
 			"1px -3px 10px rgba(255, 255, 255, 0.7), 5px 3px 10px rgba(0, 0, 0, 0.18)",
 		border: "none",
 		borderRadius: 100,
+	},
+	simpleButtonFluidActive: {
+		width: "100%",
+		height: "100%",
+		paddingTop: 3,
+		paddingBottom: 3,
+		paddingLeft: 20,
+		paddingRight: 20,
+		color: "#6497C7",
+		background: "#EFF6FC",
+		border: "none",
+		borderRadius: 100,
+		boxShadow:
+			"inset -2px -4px 5px rgba(255, 255, 255, 0.7), inset 2px 4px 5px rgba(0, 0, 0, 0.25);",
+		"@media (min-width:1200px)": {
+			paddingLeft: 20,
+			paddingRight: 20,
+		},
 	},
 	simpleButtonFluidlittle: {
 		width: "300px",

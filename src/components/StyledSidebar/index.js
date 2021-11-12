@@ -52,6 +52,7 @@ export default function StyledSidebar(props) {
 
      }
      {loc!="/user/channel"&&
+     <div style={{position:"fixed"}}>
         <ul className={css(styles.menuContent)}>
         <li className={css(styles.navigationButton)}>
           <StyledButtonNavLink
@@ -86,11 +87,9 @@ export default function StyledSidebar(props) {
 
       </ul>
 
-     }
-      {/* <hr className={css(styles.menuLine)} /> */}
+      <hr className={css(styles.menuLine)} />
 
       
-      {loc!="/user/channel"&&
        <ul className={css(styles.menuContent)}>
        <p className={css(styles.menuTitleSecond)}>My Playlists</p>
        <li className={css(styles.navigationButton)}>
@@ -149,6 +148,7 @@ export default function StyledSidebar(props) {
      </ul>
       
       
+    </div>
       }
      
     </div>

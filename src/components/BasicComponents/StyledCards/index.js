@@ -142,7 +142,7 @@ export const StyledCardSubscription = (props) => {
             <p className={css(styles.txtSubscriptionContentSecond)}>{subContent}</p>
           </div>
           <div className={css(styles.subscriptionBtn)}>
-            <StyledButtonSimpleFluid value={"+ Add"} />
+            <StyledButtonSimpleFluid value={buttonValue} />
           </div>
         </>
         :

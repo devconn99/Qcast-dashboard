@@ -434,6 +434,25 @@ export const dataQcastersProfile = Array(10).fill({
     question: 101,
   },
 })
+export const dataQcastersProfileSecond = Array(10).fill({
+  id: 123123,
+  imgsrc: imgQcastersProfileSrc1,
+  imgback: imgQcastersProfileBgSrc1,
+  imgbackSilver:imgQcastersProfileBgSrc2,
+  title: "Lisa Stuart",
+  content: "Questions for school leavers: WHAT’S NEXT?????",
+  subtitle: "Careers",
+  subcontent: "12 Questions",
+  profile: {
+    title: "Wife + Mother of Four",
+    content: "I’m from a big family and have begun my own, so have a lot of helpful tips to raising a big family well. Hope my questions help you find the answers you’re looking for.",
+  },
+  viewCount: {
+    message: 24,
+    view: 24,
+    answer: 24,
+  },
+})
 
 
 

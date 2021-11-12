@@ -5,7 +5,7 @@ import { Colors } from "../../theme";
 export default StyleSheet.create({
   container: {
     width: "285px",
-    height:"1500px",
+    // height:"1500px",
     display:"fixed",
     paddingLeft: 0,
     paddingRight: 0,

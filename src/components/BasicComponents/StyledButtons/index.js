@@ -100,7 +100,7 @@ export const StyledButtonNavLinks = (props) => {
 }
 
 export const StyledButtonSimpleFluid = (props) => {
-	const { size, value, buttonOnClick, ...otherprops } = props;
+	const { size, value, isActive, buttonOnClick, ...otherprops } = props;
 
 	const get_fontstyle = (size) => {
 		switch (size) {
@@ -122,7 +122,7 @@ export const StyledButtonSimpleFluid = (props) => {
 			size="sm"
 				type="button"
 				value={value}
-				className={[css(styles.simpleButtonFluid), get_fontstyle(size)].join(' ')}
+				className={[isActive === true ? css(styles.simpleButtonFluidActive) : css(styles.simpleButtonFluid), get_fontstyle(size)].join(' ')}
 				{...otherprops}
 				onClick={buttonOnClick}
 			/>

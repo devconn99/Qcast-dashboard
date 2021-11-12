@@ -1,25 +1,32 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { css } from "aphrodite";
 import styles from "./styles";
 import { Container } from "react-bootstrap";
 import queryString from "query-string";
+import { ROUTES } from "../../../../constants";
 
 import img_people from "assets/images/icons/people.png";
 import img_find from "assets/images/icons/find.png";
 import img_question from "assets/images/icons/question.png";
 
-import { StyledButtonSimpleFluid ,StyledImageCircle} from "components"
+import { StyledButtonSimpleFluid ,StyledImageCircle, StyledCardSubscription} from "components"
 
-import { dataQcastersProfile, dataQcastersThird } from "fakeapi";
+import { dataQcastersProfile, dataQcastersProfileSecond } from "fakeapi";
 
 const UserHomeQcastersProfile = (props) => {
   const params = queryString.parse(props.location.search);
-
+  const [isActive, setIsActive] = useState(false);
   useEffect(() => {
     console.log("params.key: ", params.key);
   }, [params.key])
 
-  const handleOnClickViewProfile = () => {
+  const handleOnClickViewProfile = (selectedID) => {
+    props.history.push(ROUTES.USER_HOME_QCASTERS_PROFILE + "?id=" + selectedID);
+  };
+  const handleOnClickViewProfileSubscribe = (e) => {
+    setIsActive(true);
+    console.log("SubscribeButton Clicked");
+    // props.history.push(ROUTES.USER_HOME_QCASTERS_PROFILE_SUBSCRIBE + "?id=" + selectedID);
   };
   return (
     <Container fluid className={css(styles.container)}>
@@ -44,6 +51,7 @@ const UserHomeQcastersProfile = (props) => {
                   className={css(styles.img_60)}
                 />
                 <p className={css(styles.txtSubscriptionContentIconTwo)}>{dataQcastersProfile[0].viewCount.people}</p>
+                <p className={css(styles.txtProfileContent)} >Subscribers</p>
               </div>
               <div className={css(styles.subscriptionImgTwo)}>
                 <img
@@ -52,6 +60,7 @@ const UserHomeQcastersProfile = (props) => {
                   className={css(styles.img_60)}
                 />
                 <p className={css(styles.txtSubscriptionContentIconTwo)}>{dataQcastersProfile[0].viewCount.find}</p>
+                <p className={css(styles.txtProfileContent)} >Qcast Series</p>
               </div>
               <div className={css(styles.subscriptionImgTwo)}>
                 <img
@@ -60,6 +69,7 @@ const UserHomeQcastersProfile = (props) => {
                   className={css(styles.img_60)}
                 />
                 <p className={css(styles.txtSubscriptionContentIconTwo)}>{dataQcastersProfile[0].viewCount.question}</p>
+                <p className={css(styles.txtProfileContent)} >Questions</p>
               </div>
             </div>
           </div>
@@ -67,7 +77,12 @@ const UserHomeQcastersProfile = (props) => {
 
         <div className={css(styles.containerProfileButton)}>
           <div className={css(styles.containerProfileButtonSubscribe)}>
-            <StyledButtonSimpleFluid size={16} value={"Subscribe"} />
+            <StyledButtonSimpleFluid
+              size={16}
+              value={"Subscribe"}
+              isActive = {isActive}
+              buttonOnClick={(e) => handleOnClickViewProfileSubscribe(e)}
+            />
           </div>
           <div className={css(styles.containerProfileButtonMore)}>
             <StyledButtonSimpleFluid size={16} value={":"} />
@@ -76,16 +91,20 @@ const UserHomeQcastersProfile = (props) => {
       </div>
 
       <div className={css(styles.containerSlide)}>
+        <div className={css(styles.slideTitle)}>Qcasts</div>
         <div className={css(styles.cardGrid5)}>
-          {dataQcastersThird.map((item, key) =>
+          {dataQcastersProfileSecond.map((item, key) =>
             <div key={key} className={css(styles.cardSecondSubCol)}>
-              {/* <StyledCardSubscription
-                txtTitle={item.title}
+              <StyledCardSubscription
                 imgsrc={item.imgsrc}
+                txtTitle={item.title}
+                txtContent={item.content}
+                subTitle = {item.subtitle}
+                subContent={item.subcontent}
                 viewCount={item.viewCount}
-                buttonValue={"View Profile"}
-                buttonOnClick={handleOnClickViewProfile}
-              /> */}
+                buttonValue={"View Qcast"}
+                buttonOnClick={(e) => handleOnClickViewProfile(item.id)}
+              />
             </div>
           )}
         </div>

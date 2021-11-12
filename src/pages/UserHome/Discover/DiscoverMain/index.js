@@ -74,6 +74,7 @@ const UserHomeDiscoverMain = (props) => {
                 txtSubTitle = {item.subTitle}
                 txtSubContent={item.subContent}
                 viewCount={item.viewCount}
+                buttonValue={"+ Add"}
               />
             </Col>
           )}
