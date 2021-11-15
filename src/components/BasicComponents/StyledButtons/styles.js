@@ -110,7 +110,7 @@ export default StyleSheet.create({
 		},
 	},
 	simpleButtonFluidlittle: {
-		width: "300px",
+		maxWidth: "300px",
 		height: "50px",
 		top:'520px',
 		background: "Linear-gradient(135.07deg, #F1F9FF 6.66%, #DCE8F7 104.83%);",
@@ -118,6 +118,7 @@ export default StyleSheet.create({
 			"1px -3px 10px rgba(255, 255, 255, 0.7), 5px 3px 10px rgba(0, 0, 0, 0.18)",
 		border: "none",
 		borderRadius: 100,
+		cursor: "pointer"
 	},
 	fontSize14: {
 		fontSize: 14,

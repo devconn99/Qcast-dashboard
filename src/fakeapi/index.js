@@ -405,7 +405,7 @@ export const dataQcastersThird = Array(20).fill({
   },
 })
 //Chanel Pages
-export const dataDavidQ = Array(20).fill({
+export const dataDavidQ = Array(8).fill({
   id: 123123,
   imgsrc: ChanelLogo,
   title: "101 Questions to ask yourself about being a good dad",
@@ -414,6 +414,11 @@ export const dataDavidQ = Array(20).fill({
     find: 1,
     question: 101,
   },
+})
+export const dataJessica = Array(12).fill({
+  id: 123123,
+  imgsrc: imgQcastersProfileSrc1,
+  title: "Jessica Parker",
 })
 export const dataQcastersProfile = Array(10).fill({
   id: 123123,
@@ -482,6 +487,7 @@ export const dataQcastsReview = Array(12).fill({
 
 export const dataDavidJacob=[
 {
+  id: 123123,
   backGround: ChanelBackGround,
   logo:ChanelLogo,
   ChanelLogoW:ChanelLogoW,

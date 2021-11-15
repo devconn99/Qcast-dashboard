@@ -30,6 +30,7 @@ import {
   UserHomeQcastsQcastReview,
 } from "./UserHome";
 import UserChannel from "./UserChannel/";
+import UserChannelProfileEdit from "./UserChannel/Page/Profile";
 import UserChannelAddBaner from "./UserChannel/AddBaner/AddBaner";
 import UserChannelChangeBanner from "./UserChannel/ChangeBanner/ChangeBanner";
 import UserTeam from "./UserTeam";
@@ -62,6 +63,7 @@ export {
   UserHomeQcastersViewQcast,
   UserHomeQcastsQcastReview,
   UserChannel,
+  UserChannelProfileEdit,
   UserTeam,
   UserRespond,
   UserMessenger,
