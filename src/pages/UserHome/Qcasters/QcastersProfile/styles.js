@@ -150,11 +150,19 @@ export default StyleSheet.create({
       gridTemplateColumns: "repeat(5, 1fr)",
     },
   },
-
+  cardsSlider: {
+    display: "flex",
+    width: 1500,
+    columnGap: 40,
+    overflow: "auto",
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginBottom: 55,
+  },
   cardFirstSubCol: {
     marginBottom: 55,
   },
   cardSecondSubCol: {
-    marginBottom: 55,
+    width: 300,
   },
 })

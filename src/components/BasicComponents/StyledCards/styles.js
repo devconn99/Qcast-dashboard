@@ -93,6 +93,12 @@ export default StyleSheet.create({
     flexDirection: "column",
     marginTop: 15,
   },
+  subscriptionSub1: {
+    display: "flex",
+    width: 300,
+    flexDirection: "column",
+    marginTop: 15,
+  },
   subscriptionImg: {
     display: "flex",
     justifyContent: "space-evenly",

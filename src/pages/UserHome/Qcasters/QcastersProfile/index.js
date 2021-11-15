@@ -21,10 +21,11 @@ const UserHomeQcastersProfile = (props) => {
   }, [params.key])
 
   const handleOnClickViewProfile = (selectedID) => {
-    props.history.push(ROUTES.USER_HOME_QCASTERS_PROFILE + "?id=" + selectedID);
+    console.log("View Qcast");
+    props.history.push(ROUTES.USER_HOME_QCASTERS_VIEW_QCAST + "?id=" + selectedID);
   };
   const handleOnClickViewProfileSubscribe = (e) => {
-    setIsActive(true);
+    setIsActive(!isActive);
     console.log("SubscribeButton Clicked");
     // props.history.push(ROUTES.USER_HOME_QCASTERS_PROFILE_SUBSCRIBE + "?id=" + selectedID);
   };
@@ -92,7 +93,7 @@ const UserHomeQcastersProfile = (props) => {
 
       <div className={css(styles.containerSlide)}>
         <div className={css(styles.slideTitle)}>Qcasts</div>
-        <div className={css(styles.cardGrid5)}>
+        <div className={css(styles.cardsSlider)}>
           {dataQcastersProfileSecond.map((item, key) =>
             <div key={key} className={css(styles.cardSecondSubCol)}>
               <StyledCardSubscription
@@ -103,6 +104,7 @@ const UserHomeQcastersProfile = (props) => {
                 subContent={item.subcontent}
                 viewCount={item.viewCount}
                 buttonValue={"View Qcast"}
+                where={"qcastsReview"}
                 buttonOnClick={(e) => handleOnClickViewProfile(item.id)}
               />
             </div>

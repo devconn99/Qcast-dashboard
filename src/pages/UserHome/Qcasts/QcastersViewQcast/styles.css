@@ -1,0 +1,6 @@
+.reportModal {
+    padding: 0;
+    background: linear-gradient(135.07deg, #F1F9FF 6.66%, #DCE8F7 104.83%);
+    box-shadow: -1px -3px 10px rgba(255, 255, 255, 0.7), 5px 3px 10px rgba(0, 0, 0, 0.18);
+    border-radius: 10px;
+  }

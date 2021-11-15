@@ -26,6 +26,8 @@ import {
   UserHomeQcasts,
   UserHomeQcastersMain,
   UserHomeQcastersProfile,
+  UserHomeQcastersViewQcast,
+  UserHomeQcastsQcastReview,
 } from "./UserHome";
 import UserChannel from "./UserChannel/";
 import UserChannelAddBaner from "./UserChannel/AddBaner/AddBaner";
@@ -57,6 +59,8 @@ export {
   UserHomeQcasts,
   UserHomeQcastersMain,
   UserHomeQcastersProfile,
+  UserHomeQcastersViewQcast,
+  UserHomeQcastsQcastReview,
   UserChannel,
   UserTeam,
   UserRespond,

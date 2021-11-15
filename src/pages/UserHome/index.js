@@ -7,7 +7,11 @@ import {
   UserHomeTopicsMain,
   UserHomeTopicsCounselling,
 } from './Topics';
-import UserHomeQcasts from './Qcasts';
+import {
+  UserHomeQcasts,
+  UserHomeQcastersViewQcast,
+  UserHomeQcastsQcastReview
+} from './Qcasts';
 import {
   UserHomeQcastersMain,
   UserHomeQcastersProfile,
@@ -22,4 +26,6 @@ export {
   UserHomeQcasts,
   UserHomeQcastersMain,
   UserHomeQcastersProfile,
+  UserHomeQcastersViewQcast,
+  UserHomeQcastsQcastReview,
 };

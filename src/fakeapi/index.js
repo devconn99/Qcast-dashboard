@@ -453,6 +453,30 @@ export const dataQcastersProfileSecond = Array(10).fill({
     answer: 24,
   },
 })
+// For view qcast page
+export const dataQcastersQcast = Array(12).fill({
+  id: 123123,
+  imgsrc: imgQcastersProfileSrc1,
+  imgback: imgQcastersProfileBgSrc1,
+  imgbackSilver:imgQcastersProfileBgSrc2,
+  title: "Lisa Stuart",
+  content: "12 Questions to ask yourself when raising more than one child",
+  subtitle: "Family",
+  subcontent: "12 Questions",
+  profile: {
+    title: "Wife + Mother of Four",
+    content: "I’m from a big family and have begun my own, so have a lot of helpful tips to raising a big family well. Hope my questions help you find the answers you’re looking for. I’m from a big family and have begun my own, so have a lot of helpful tips.",
+  },
+  viewCount: {
+    message: 24,
+    view: 24,
+    answer: 24,
+  },
+})
+export const dataQcastsReview = Array(12).fill({
+  id: 123123,
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae mattis ac accumsan mi vitae pellentesque amet, et. Vestibulum, leo semper augue in platea diam. ",
+})
 
 
 

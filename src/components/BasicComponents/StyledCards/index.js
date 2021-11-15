@@ -92,7 +92,7 @@ export const StyledCardPopularLarge = (props) => {
 };
 
 export const StyledCardSubscription = (props) => {
-  const { txtContent, txtTitle, imgsrc, viewCount, subTitle, subContent ,buttonValue, buttonOnClick} = props;
+  const { txtContent, txtTitle, imgsrc, viewCount, subTitle, subContent ,buttonValue, buttonOnClick, where} = props;
   const isSearchCast = txtContent === undefined;
   console.log(isSearchCast);
   return (
@@ -100,7 +100,7 @@ export const StyledCardSubscription = (props) => {
       <div className={css(styles.imgSubscription)}>
         <StyledImageCircle size="large" imgSrc={imgsrc} />
       </div>
-      <div className={css(styles.subscriptionSub)}>
+      <div className={!where ? css(styles.subscriptionSub) : css(styles.subscriptionSub1)}>
         <p className={css(styles.txtSubscriptionContentFirst)}>{txtContent}</p>
         <p className={css(styles.txtSubscriptionTitleFirst)}>{txtTitle}</p>
       </div>
@@ -142,7 +142,7 @@ export const StyledCardSubscription = (props) => {
             <p className={css(styles.txtSubscriptionContentSecond)}>{subContent}</p>
           </div>
           <div className={css(styles.subscriptionBtn)}>
-            <StyledButtonSimpleFluid value={buttonValue} />
+            <StyledButtonSimpleFluid value={buttonValue} buttonOnClick={buttonOnClick} />
           </div>
         </>
         :

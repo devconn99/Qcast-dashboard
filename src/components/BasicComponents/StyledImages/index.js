@@ -4,7 +4,7 @@ import { dataQcastersProfile,dataDavidJacob} from "fakeapi";
 import { colors } from "@material-ui/core";
 
 export const StyledImageCircle = (props) => {
-  const { imgSrc, size, otherprops ,text} = props
+  const { imgSrc, size, otherprops ,text, playButton, buttonEffect} = props
   return (
     <>
     
@@ -17,6 +17,13 @@ export const StyledImageCircle = (props) => {
             css(styles.imgPopularLarge)}
         {...otherprops}
       />
+      {playButton == "small" &&
+      <div className={css(styles.playButtonSmall)} onClick={buttonEffect}>▶</div>
+      }
+      {playButton == "large" &&
+      <div className={css(styles.playButtonLarge)} onClick={buttonEffect}>▶</div>
+      }
+      <p className={css(styles.text)}>{text}</p>
     </>
   )
 };

@@ -294,6 +294,8 @@ export const ROUTES = {
   USER_HOME_TOPICS_MAIN: "/user/home/topics",
   USER_HOME_TOPICS_COUNSELLING: "/user/home/topics/counselling",
   USER_HOME_QCASTS: "/user/home/qcasts",
+  USER_HOME_QCASTERS_VIEW_QCAST: "/user/home/qcasts/viewQcast",
+  USER_HOME_QCASTS_QCAST_REVIEW: "/user/home/qcasts/qcastReview",
   USER_HOME_QCASTERS_MAIN: "/user/home/qcasters",
   USER_HOME_QCASTERS_PROFILE: "/user/home/qcasters/profile",
   USER_CHANNEL: "/user/channel",

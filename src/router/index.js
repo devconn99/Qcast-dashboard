@@ -26,6 +26,8 @@ import {
   UserHomeQcasts,
   UserHomeQcastersMain,
   UserHomeQcastersProfile,
+  UserHomeQcastersViewQcast,
+  UserHomeQcastsQcastReview,
   UserChannel,
   UserChannelAddBaner,
   UserTeam,
@@ -176,6 +178,16 @@ class Routers extends React.PureComponent {
               <AuthRoute
                 path={ROUTES.USER_HOME_QCASTERS_PROFILE}
                 component={UserHomeQcastersProfile}
+                {...repeatedProps}
+              />
+              <AuthRoute
+                path={ROUTES.USER_HOME_QCASTERS_VIEW_QCAST}
+                component={UserHomeQcastersViewQcast}
+                {...repeatedProps}
+              />
+              <AuthRoute
+                path={ROUTES.USER_HOME_QCASTS_QCAST_REVIEW}
+                component={UserHomeQcastsQcastReview}
                 {...repeatedProps}
               />
 
