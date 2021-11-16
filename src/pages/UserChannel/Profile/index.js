@@ -102,7 +102,7 @@ const UserChannelProfile = (props) => {
           </div>
         </Col>
         <Col xl={2} md={2} sm={2}
-          style={{ marginRight: '20', marginTop: '20px' }}>
+          style={{ paddingRight: '40px', marginTop: '20px' }}>
           <StyledButtonSimpleFluidLittle
             size={16}
             value={"Edit Profile"}
@@ -133,7 +133,7 @@ const UserChannelProfile = (props) => {
                   </li>
                   <li className={css(styles.navigationButton)}>
                     <Tabs
-                      to={ROUTES.USER_CHANNEL_PROFILE}
+                      to={ROUTES.USER_CHANNEL_PROFILE + "?tab=1"}
                       index={2}
                       isActive={search == 2 ? true : false}
                       onClick={() => {
@@ -146,7 +146,7 @@ const UserChannelProfile = (props) => {
                   </li>
                   <li className={css(styles.navigationButton)}>
                     <Tabs
-                      to={ROUTES.USER_CHANNEL_PROFILE}
+                      to={ROUTES.USER_CHANNEL_PROFILE + "?tab=2"}
                       index={2}
                       isActive={search == 3 ? true : false}
                       onClick={() => {
@@ -159,7 +159,7 @@ const UserChannelProfile = (props) => {
                   </li>
                   <li className={css(styles.navigationButton)}>
                     <Tabs
-                      to={ROUTES.USER_CHANNEL_PROFILE}
+                      to={ROUTES.USER_CHANNEL_PROFILE + "?tab=3"}
                       index={2}
                       isActive={search == 4 ? true : false}
 
@@ -177,7 +177,7 @@ const UserChannelProfile = (props) => {
           </Navbar>
         </Col>
         <Col xl={2} md={2} sm={2}
-          style={{ marginRight: '20' }}>
+          style={{ paddingRight: '40px' }}>
           <StyledButtonSimpleFluidLittle
             size={16}
             value={"Create Qcast"}

@@ -18,6 +18,7 @@ export default function StyledSidebar(props) {
           <ul className={css(styles.menuContent)}>
         <li className={css(styles.navigationButton)}>
           <StyledButtonNavLink
+          isActive={(loc=="/user/channel/profile" || loc=="/user/channel/profileEdit") && true}
             to={ROUTES.USER_CHANNEL_PROFILE}
           >
             Profile
