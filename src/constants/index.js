@@ -300,8 +300,7 @@ export const ROUTES = {
   USER_HOME_QCASTERS_PROFILE: "/user/home/qcasters/profile",
   USER_CHANNEL: "/user/channel",
   USER_CHANNEL_PROFILE: "/user/channel/profile",
-  USER_CHANNEL_ADDBANER:'/user/channel/addbaner/addbaner/',
-  USER_CHANNEL_ChangeBanner:'/user/channel/changeBanner/changeBanner',
+  USER_CHANNEL_PROFILE_EDIT: "/user/channel/profileEdit",
   
   USER_TEAM: "/user/team",
   USER_RESPOND: "/user/respond",

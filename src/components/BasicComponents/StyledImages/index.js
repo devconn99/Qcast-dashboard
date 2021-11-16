@@ -32,7 +32,9 @@ export const StyledImageCircleDark = (props) => {
 
   return (
     <>
+   {ImgIcon && 
    <img  style={{display:'absolute' ,zIndex:"10",marginTop:'116px',marginLeft:'41px',width:'23px',height:'23px'}} src={ImgIcon}></img>
+   }
    {variant!="two"&&
       <p style={{display:'absolute' ,zIndex:"10",marginTop:'116px',marginLeft:'3px', color:"white"}} >
       

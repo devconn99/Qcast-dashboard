@@ -1,0 +1,102 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .fileUploader {
+      width: 250px;
+  }
+  
+  .fileContainer {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  .fileContainer p:empty {
+    font-size: 12px;
+    margin: 0;
+  }
+  
+  .fileContainer .uploadPicturesWrapper {
+      display: none !important;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute !important;
+    top: 54px;
+    height: auto; */
+  }
+  .uploadPicturesWrapper {
+    display: none !important;
+    height: 1px;
+    width: 500px;
+  }
+  
+  .fileContainer .uploadPictureContainer {
+    width: 265px !important;
+    height: 265px !important;
+    padding: 5px !important;
+    margin: 0 !important;
+    background: #edf2f6 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    /* height: inherit !important; */
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 100% !important;
+    position: relative !important;
+  }
+  
+  .fileContainer .deleteImage {
+    display: none !important;
+  }
+  
+  .fileContainer .deleteImage:after {
+    content: "Delete image";
+    position: absolute;
+    right: -45px;
+    font-size: 16px;
+  }
+  
+  .fileContainer .uploadPictureContainer img.uploadPicture {
+    width: 265px !important;
+    height: 265px !important;
+    border-radius: 100% !important;
+  }
+  
+  .fileContainer .errorsContainer {
+    max-width: 300px;
+    font-size: 12px;
+    position: absolute;
+    z-index: 10;
+    top: 35%;
+    background: rgba(255, 0, 0, 0.7);
+    padding: 0 !important;
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+    width: 79%;
+    border-radius: 6px;
+  }
+  
+  .fileContainer .errorsContainer:empty {
+    opacity: 0;
+  }
+  
+  .fileContainer .chooseFileButton {
+    padding: 6px 23px !important;
+    background: transparent !important;
+    border-radius: 300px !important;
+    color: white !important;
+    font-weight: 300 !important;
+    font-size: 14px !important;
+    margin: 10px 0 !important;
+    transition: all 0.2s ease-in !important;
+    cursor: pointer !important;
+    outline: none !important;
+    border: none !important;
+  }
+  
+  .fileContainer .chooseFileButton:hover {
+    background-color: transparent !important;
+  }

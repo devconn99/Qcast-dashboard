@@ -13,12 +13,12 @@ export default function StyledSidebar(props) {
  const loc=location.pathname;
   return (
     <div className={css(styles.container)}>
-      {loc=="/user/channel"&&
+      {(loc=="/user/channel/profile" || loc=="/user/channel/profileEdit")&&
        <div style={{position:"fixed"}}>
           <ul className={css(styles.menuContent)}>
         <li className={css(styles.navigationButton)}>
           <StyledButtonNavLink
-            to={ROUTES.USER_CHANNEL}
+            to={ROUTES.USER_CHANNEL_PROFILE}
           >
             Profile
           </StyledButtonNavLink>
@@ -51,7 +51,7 @@ export default function StyledSidebar(props) {
          </div>
 
      }
-     {loc!="/user/channel"&&
+     {(loc!="/user/channel/profile" && loc!="/user/channel/profileEdit")&&
      <div style={{position:"fixed"}}>
         <ul className={css(styles.menuContent)}>
         <li className={css(styles.navigationButton)}>

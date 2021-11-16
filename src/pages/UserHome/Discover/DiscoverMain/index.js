@@ -38,7 +38,7 @@ const UserHomeDiscoverMain = (props) => {
             <StyledButtonSimpleFluid
               size={14}
               value={"View All >"}
-              onClick={handleClickViewAllPopular}
+              buttonOnClick={handleClickViewAllPopular}
             />
           </div>
         </div>

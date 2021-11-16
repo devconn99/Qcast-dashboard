@@ -29,10 +29,10 @@ import {
   UserHomeQcastersViewQcast,
   UserHomeQcastsQcastReview,
 } from "./UserHome";
-import UserChannel from "./UserChannel/";
-import UserChannelProfileEdit from "./UserChannel/Page/Profile";
-import UserChannelAddBaner from "./UserChannel/AddBaner/AddBaner";
-import UserChannelChangeBanner from "./UserChannel/ChangeBanner/ChangeBanner";
+import {
+  UserChannelProfile,
+  UserChannelProfileEdit,
+} from "./UserChannel";
 import UserTeam from "./UserTeam";
 import UserRespond from "./UserRespond";
 import UserMessenger from "./UserMessenger";
@@ -62,10 +62,9 @@ export {
   UserHomeQcastersProfile,
   UserHomeQcastersViewQcast,
   UserHomeQcastsQcastReview,
-  UserChannel,
+  UserChannelProfile,
   UserChannelProfileEdit,
   UserTeam,
   UserRespond,
   UserMessenger,
-  UserChannelAddBaner,UserChannelChangeBanner
 };

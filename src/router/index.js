@@ -28,13 +28,11 @@ import {
   UserHomeQcastersProfile,
   UserHomeQcastersViewQcast,
   UserHomeQcastsQcastReview,
-  UserChannel,
+  UserChannelProfile,
   UserChannelProfileEdit,
-  UserChannelAddBaner,
   UserTeam,
   UserRespond,
   UserMessenger,
-  UserChannelChangeBanner
 } from "../pages";
 
 import LayoutWrapper from "./LayoutWrapper";
@@ -193,31 +191,16 @@ class Routers extends React.PureComponent {
               />
 
               <AuthRoute
-                path={ROUTES.USER_CHANNEL}
-                component={UserChannel}
+                path={ROUTES.USER_CHANNEL_PROFILE}
+                component={UserChannelProfile}
                 {...repeatedProps}
               />
-
+              
               <AuthRoute
-                path={ROUTES.USER_CHANNEL_PROFILE}
+                path={ROUTES.USER_CHANNEL_PROFILE_EDIT}
                 component={UserChannelProfileEdit}
                 {...repeatedProps}
               />
-
-              <AuthRoute
-                path={ROUTES.USER_CHANNEL_ADDBANER}
-                component={UserChannelAddBaner}
-                {...repeatedProps}
-              />
-
-              <AuthRoute
-                path={ROUTES.USER_CHANNEL_ChangeBanner}
-                component={UserChannelChangeBanner}
-                {...repeatedProps}
-              />
-
-
-
 
               <AuthRoute
                 path={ROUTES.USER_TEAM}

@@ -418,7 +418,10 @@ export const dataDavidQ = Array(8).fill({
 export const dataJessica = Array(12).fill({
   id: 123123,
   imgsrc: imgQcastersProfileSrc1,
+  backGround: ChanelBackGround,
   title: "Jessica Parker",
+  motto: "Husband +Father of six",
+  description: "I’m from a big family and have begun my own, so have a lot of helpful tips to raising a big family well. Hope my questions help you find the answers you’re looking for.",
 })
 export const dataQcastersProfile = Array(10).fill({
   id: 123123,

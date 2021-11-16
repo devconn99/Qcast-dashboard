@@ -58,8 +58,8 @@ export default function StyledHeader(props) {
               </li>
               <li className={css(styles.navigationButton)}>
                 <StyledButtonNavLink
-                  to={ROUTES.USER_CHANNEL}
-                  isActive={!(pathname.indexOf(ROUTES.USER_CHANNEL) < 0)}
+                  to={ROUTES.USER_CHANNEL_PROFILE}
+                  isActive={!(pathname.indexOf(ROUTES.USER_CHANNEL_PROFILE) < 0)}
                 >
                   Channel
                 </StyledButtonNavLink>
