@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { css } from "aphrodite";
+import queryString from "query-string";
 import styles from "./styles";
 import { Container, Row, Col, Dropdown, } from "react-bootstrap";
 import 'react-responsive-modal/styles.css';
@@ -25,6 +26,7 @@ import { ROUTES } from "../../../constants";
 
 const UserChannelProfile = (props) => {
   console.log("props", props);
+  const params = queryString.parse(props.location.search);
 
   const closeIcon = (<span className={css(styles.closeBtn)}>
                       <img
@@ -122,7 +124,7 @@ const UserChannelProfile = (props) => {
                     <Tabs
                       to={ROUTES.USER_CHANNEL_PROFILE}
                       index={1}
-                      isActive={search == 1 ? true : false}
+                      isActive={!params.tab ? true : false}
                       onClick={() => {
                         setSearch(1)
                       }}
@@ -135,7 +137,7 @@ const UserChannelProfile = (props) => {
                     <Tabs
                       to={ROUTES.USER_CHANNEL_PROFILE + "?tab=1"}
                       index={2}
-                      isActive={search == 2 ? true : false}
+                      isActive={(params.tab && params.tab == 1) ? true : false}
                       onClick={() => {
                         setSearch(2)
                       }}
@@ -148,7 +150,7 @@ const UserChannelProfile = (props) => {
                     <Tabs
                       to={ROUTES.USER_CHANNEL_PROFILE + "?tab=2"}
                       index={2}
-                      isActive={search == 3 ? true : false}
+                      isActive={(params.tab && params.tab == 2) ? true : false}
                       onClick={() => {
                         setSearch(3)
                       }}
@@ -161,7 +163,7 @@ const UserChannelProfile = (props) => {
                     <Tabs
                       to={ROUTES.USER_CHANNEL_PROFILE + "?tab=3"}
                       index={2}
-                      isActive={search == 4 ? true : false}
+                      isActive={(params.tab && params.tab == 3) ? true : false}
 
                       onClick={() => {
                         setSearch(4)
