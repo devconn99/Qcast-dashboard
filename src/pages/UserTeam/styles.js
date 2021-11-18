@@ -19,6 +19,7 @@ export default StyleSheet.create({
   logoItem: {
     paddingLeft: 10,
     paddingRight: 10,
+    cursor: "pointer"
   },
   ctrlBtns: {
     display: "flex",
@@ -154,6 +155,7 @@ export default StyleSheet.create({
     boxShadow: "rgb(255 255 255 / 70%) 1px -3px 10px, rgb(0 0 0 / 18%) 5px 3px 10px",
     border: "none",
     borderRadius: 100,
+    cursor: "pointer"
   },
   msgContent: {
     width: "80%",
@@ -259,6 +261,7 @@ export default StyleSheet.create({
     fontWeight: "bold",
     paddingTop: 10,
     paddingBottom: 20,
+    cursor: "pointer"
   },
   addOptions: {
   },
