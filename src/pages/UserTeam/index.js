@@ -10,6 +10,10 @@ import { ROUTES } from "../../constants";
 import styles from "./styles";
 import { StyledCardPopular, StyledImageCircle, StyledButtonSimpleFluidLittle } from "components"
 
+import img_cocacola from "../../assets/images/icons/cocacola.png";
+import img_peugeot from "../../assets/images/icons/peugeot.png";
+import img_lbc from "../../assets/images/icons/lbc.png";
+
 import img_logo from "../../assets/images/teamImage5/teamImage5.png";
 import img_add from "../../assets/images/icons/add.png";
 import img_close from "assets/images/icons/close.png";
@@ -33,12 +37,12 @@ const UserTeam = (props) => {
   const params = queryString.parse(location.search);
 
   const closeIcon = (<span className={css(styles.closeBtn)}>
-                        <img
-                          src={img_close_svg}
-                          alt=""
-                          className={css(styles.img_24)}
-                        />
-                      </span>);
+    <img
+      src={img_close_svg}
+      alt=""
+      className={css(styles.img_24)}
+    />
+  </span>);
   const [open, setOpen] = useState(params.location == "addgroup" ? true : false);
   const onOpenModal = () => setOpen(open);
   const onCloseModal = () => {
@@ -46,6 +50,9 @@ const UserTeam = (props) => {
     setStep(1);
     props.history.push(ROUTES.USER_TEAM);
   };
+
+  const [addOp, setAddOp] = useState(false)
+
   const handleOnClickForward = (selectedID) => {
     console.log("Forward");
     setOpen(true);
@@ -92,13 +99,13 @@ const UserTeam = (props) => {
       <div className={css(styles.headerContainer)}>
         <div className={css(styles.logoList)}>
           <div className={css(styles.logoItem)}>
-            <StyledImageCircle size="small" imgSrc={img_logo} />
+            <StyledImageCircle size="small" imgSrc={img_cocacola} />
           </div>
           <div className={css(styles.logoItem)}>
-            <StyledImageCircle size="small" imgSrc={img_logo} />
+            <StyledImageCircle size="small" imgSrc={img_peugeot} />
           </div>
           <div className={css(styles.logoItem)}>
-            <StyledImageCircle size="small" imgSrc={img_logo} />
+            <StyledImageCircle size="small" imgSrc={img_lbc} />
           </div>
           <div className={css(styles.logoItem)}>
             <img
@@ -271,7 +278,7 @@ const UserTeam = (props) => {
         </div>
       </div>
 
-      <Modal 
+      <Modal
         open={params.location == "addgroup" ? true : false}
         onClose={onCloseModal}
         center
@@ -279,84 +286,106 @@ const UserTeam = (props) => {
         classNames={{
           modal: 'reportModal',
         }}
-        >
-          <>
-            <p className={css(styles.modalTitle)}>{step == 1 ? "Create a group" : "Add people"}</p>
-            <div className={css(styles.modalContent)}>
-              <div className={css(styles.seachBar)}>
-                {step == 1 && <p>Groups are where your team communicates. They’re best when organized around a topic — #marketing, for example.</p>}
-                {step != 1 && 
+      >
+        <>
+          <p className={css(styles.modalTitle)}>{step == 1 ? "Create a group" : "Add people"}</p>
+          <div className={css(styles.modalContent)}>
+            <div className={css(styles.seachBar)}>
+              {step == 1 && <p>Groups are where your team communicates. They’re best when organized around a topic — #marketing, for example.</p>}
+              {(step != 1 && !addOp) &&
                 <>
                   <div className={css(styles.addOptions)}>
-                    <div className={css(styles.addOption)}>
-                    <img
-                          src={img_op_0}
-                          alt=""
-                          className={css(styles.img_20)}
-                        />
+                    <div className={css(styles.addOption)} onClick={e => setAddOp(!addOp)}>
+                      <img
+                        src={img_op_0}
+                        alt=""
+                        className={css(styles.img_20)}
+                      />
                       <p>Add all members of Coca Cola</p>
                     </div>
                     <div className={css(styles.addOption)}>
-                    <img
-                          src={img_op_1}
-                          alt=""
-                          className={css(styles.img_20)}
-                        />
+                      <img
+                        src={img_op_1}
+                        alt=""
+                        className={css(styles.img_20)}
+                      />
                       <p>Add specific people</p>
                     </div>
                   </div>
                 </>
-                }
-                {step == 1  && <input type="text" placeholder="Group name" className={css(styles.groupName)} onChange={e => enterName(e)}/>}
-                {step == 2  && <input type="text" placeholder="Enter a name or email" className={css(styles.groupName)} onChange={e => enterEmail(e)}/>}
-                {step == 3  && 
+              }
+              {(step != 1 && addOp) &&
+                <>
+                  <div className={css(styles.addOptions)}>
+                    <div className={css(styles.addOption)}>
+                      <img
+                        src={img_op_1}
+                        alt=""
+                        className={css(styles.img_20)}
+                      />
+                      <p>Add all members of Coca Cola</p>
+                    </div>
+                    <div className={css(styles.addOption)} onClick={e => setAddOp(!addOp)}>
+                      <img
+                        src={img_op_0}
+                        alt=""
+                        className={css(styles.img_20)}
+                      />
+                      <p>Add specific people</p>
+                    </div>
+                  </div>
+                </>
+              }
+              {step == 1 && <input type="text" placeholder="Group name" className={css(styles.groupName)} onChange={e => enterName(e)} />}
+              {step == 2 && <input type="text" placeholder="Enter a name or email" className={css(styles.groupName)} onChange={e => enterEmail(e)} />}
+              {step == 3 &&
                 <div className={css(styles.groupName)}>
                   <div className={css(styles.addedPeopleList)}>
                     <div className={css(styles.addedPeople)}>
                       <img
-                          src={img_logo}
-                          alt=""
-                          className={css(styles.img_20)}
-                        />
+                        src={img_logo}
+                        alt=""
+                        className={css(styles.img_20)}
+                      />
                       <span>Adam Smith</span>
                       <img
-                          src={img_clear_svg}
-                          alt=""
-                          className={css(styles.img_20_p_4_ml_4)}
-                        />
+                        src={img_clear_svg}
+                        alt=""
+                        className={css(styles.img_20_p_4_ml_4)}
+                      />
                     </div>
                     <div className={css(styles.addedPeople)}>
                       <img
-                          src={img_logo}
-                          alt=""
-                          className={css(styles.img_20)}
-                        />
+                        src={img_logo}
+                        alt=""
+                        className={css(styles.img_20)}
+                      />
                       <span>Adam Smith</span>
                       <img
-                          src={img_clear_svg}
-                          alt=""
-                          className={css(styles.img_20_p_4_ml_4)}
-                        />
+                        src={img_clear_svg}
+                        alt=""
+                        className={css(styles.img_20_p_4_ml_4)}
+                      />
                     </div>
                   </div>
                 </div>
-                }
-                {step == 1 && <p className={css(styles.privateOption)}>Make private</p>}
-                {step == 1 && <div className={css(styles.privateContent)}>
-                  <p className={css(styles.privateText)}>When a group is set to private, it can only be viewed or joined by invitation.</p>
-                  <img
-                    src={img_switch}
-                    alt=""
-                    className={css(styles.img_h_30)}
-                  />
-                </div>}
-              </div>
+              }
+              {step == 1 && <p className={css(styles.privateOption)}>Make private</p>}
+              {step == 1 && <div className={css(styles.privateContent)}>
+                <p className={css(styles.privateText)}>When a group is set to private, it can only be viewed or joined by invitation.</p>
+                <img
+                  src={img_switch}
+                  alt=""
+                  className={css(styles.img_h_30)}
+                />
+              </div>}
             </div>
-            <hr/>
-            {step == 1 && <div className={css(styles.creatBtn)} onClick={e => setStep(2)}>Create</div>}
-            {step == 2 && <div className={css(styles.creatBtn)} onClick={e => setStep(3)}>Skip for now</div>}
-            {step == 3 && <div className={css(styles.creatBtn)} onClick={e => onCloseModal()}>Done</div>}
-          </>
+          </div>
+          <hr />
+          {step == 1 && <div className={css(styles.creatBtn)} onClick={e => setStep(2)}>Create</div>}
+          {step == 2 && <div className={css(styles.creatBtn)} onClick={e => setStep(3)}>Skip for now</div>}
+          {step == 3 && <div className={css(styles.creatBtn)} onClick={e => onCloseModal()}>Done</div>}
+        </>
       </Modal>
 
     </div>

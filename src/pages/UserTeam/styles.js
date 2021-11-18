@@ -20,6 +20,7 @@ export default StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     cursor: "pointer"
+
   },
   ctrlBtns: {
     display: "flex",
@@ -267,6 +268,7 @@ export default StyleSheet.create({
   },
   addOption: {
     display: "flex",
+    cursor: "pointer"
   },
   img_20: {
     height: 20,
