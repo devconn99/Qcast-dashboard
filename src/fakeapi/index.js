@@ -486,7 +486,11 @@ export const dataQcastsReview = Array(12).fill({
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae mattis ac accumsan mi vitae pellentesque amet, et. Vestibulum, leo semper augue in platea diam. ",
 })
 
-
+export const dataTeamMembers = Array(8).fill({
+  id: 123123,
+  imgsrc: ChanelLogo,
+  title: "Adam Smith",
+})
 
 export const dataDavidJacob=[
 {

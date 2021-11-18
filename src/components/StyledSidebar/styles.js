@@ -25,13 +25,13 @@ export default StyleSheet.create({
     listStyle: "none",
     paddingLeft: 0,
     paddingRight: 0,
-    paddingTop: 6,
-    paddingBottom: 6,
+    // paddingTop: 6,
+    // paddingBottom: 6,
   },
   linkButton: {
     display: "block",
-    paddingTop: 12,
-    paddingBottom: 12,
+    paddingTop: 6,
+    paddingBottom: 6,
     paddingLeft: 20,
     paddingRight: 20,
     color: "#7B94B5",
@@ -47,8 +47,8 @@ export default StyleSheet.create({
   },
   linkButtonActive: {
     display: "block",
-    paddingTop: 12,
-    paddingBottom: 12,
+    paddingTop: 6,
+    paddingBottom: 6,
     paddingLeft: 20,
     paddingRight: 20,
     color: "#6497C7",
@@ -68,10 +68,12 @@ export default StyleSheet.create({
   },
   menuContent: {
     paddingLeft: 40,
-    paddingRight: 40,
+    // paddingRight: 40,
     marginBottom: 48,
     display: "flex",
     flexDirection: "column",
+    height:760,
+    overflow: "auto"
   },
 
   menuLine: {
@@ -119,5 +121,50 @@ export default StyleSheet.create({
       paddingLeft: 33,
       paddingRight: 33,
     },
+  },
+
+  // accordion
+  navButtonParent: {
+    listStyle: "none",
+  },
+  navButtonParent1: {
+    display: "flex",
+    minWidth:"244px",
+    alignItems: "center",
+    justifyContent: "space-between",
+    cursor: "pointer",
+  },
+  navButtonParent2: {
+  },
+  acordMenuContent: {
+    paddingLeft: 10,
+    paddingRight: 20,
+    marginBottom: 10,
+    display: "flex",
+    flexDirection: "column",
+  },
+  img_35: {
+    width: 35,
+  },
+  img_35_p_7: {
+    width: 35,
+    padding: 7
+  },
+  img_20_p_4: {
+    width: 20,
+    padding: 4
+  },
+  img_clear: {
+    width: 20,
+    padding: 4,
+    transform: "rotate(45deg)",
+    boxShadow:
+      "-1px -3px 10px rgba(255, 255, 255, 0.7), 5px 3px 10px rgba(0, 0, 0, 0.18)",
+    borderRadius: 10,
+  },
+  arrow_down: {
+    width: 18,
+    height: 10,
+    marginRight: 20,
   },
 });
