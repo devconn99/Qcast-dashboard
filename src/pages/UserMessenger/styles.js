@@ -415,10 +415,10 @@ export default StyleSheet.create({
     borderRadius: 100,
     cursor: "pointer"
   },
-  cardGrid: {
-    height: 330,
-    overflow: "auto",
-  },
+  // cardGrid: {
+  //   height: 330,
+  //   overflow: "auto",
+  // },
   cardGrid5: {
     height: 660,
     columnGap: 20,

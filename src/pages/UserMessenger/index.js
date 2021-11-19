@@ -1,8 +1,7 @@
 // @flow
 import React, { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import queryString from "query-string";
 import { css } from "aphrodite";
+import { Scrollbars } from 'react-custom-scrollbars';
 
 import styles from "./styles";
 import { StyledCardPopular, StyledImageCircle, StyledButtonSimpleFluid } from "components"
@@ -17,6 +16,22 @@ import img_smile from "assets/images/icons/smile.png";
 import img_attach from "assets/images/icons/attach.png";
 import img_msg_1 from "assets/images/icons/msg_1.png";
 import img_send from "assets/images/icons/send.png";
+
+const renderThumb = ({ style, ...props }) => {
+  const thumbStyle = {
+    borderRadius: 6,
+    backgroundColor: '#BBCFEA'
+  };
+  return <div style={{ ...style, ...thumbStyle }} {...props} />;
+};
+
+const CustomScrollbars = props => (
+  <Scrollbars
+    renderThumbHorizontal={renderThumb}
+    renderThumbVertical={renderThumb}
+    {...props}
+  />
+);
 
 const UserMessenger = (props) => {
   // console.log("propssss 000", props);
@@ -124,7 +139,7 @@ const UserMessenger = (props) => {
         {openQcasts && <div className={css(styles.sendQcastBox)}>
           <div className={css(styles.sendQcastBoxContent)}>
             <ul className={css(styles.menuMiddleContent)}>
-              <li className={ isSelect == 0 ? css(styles.tabActive) : css(styles.tab)} onClick={e => userSelected(0)}>
+              <li className={isSelect == 0 ? css(styles.tabActive) : css(styles.tab)} onClick={e => userSelected(0)}>
                 All
               </li>
               <li className={isSelect == 1 ? css(styles.tabActive) : css(styles.tab)} onClick={e => userSelected(1)}>
@@ -137,17 +152,19 @@ const UserMessenger = (props) => {
                 Published
               </li>
             </ul>
-            <div className={css(styles.cardGrid)}>
-              <div className={css(styles.cardGrid5)}>
-                {dataDavidQ.map((item, key) =>
-                  <div key={key} className={css(styles.cardSecondSubCol)}>
-                    <StyledImageCircle size="small" imgSrc={item.imgsrc} />
-                    <p className={css(styles.qcasttitle)}>{item.title}</p>
-                    <div className={css(styles.sendBtn)}>Send</div>
-                  </div>
-                )}
+            <CustomScrollbars style={{ height: 330 }}>
+              <div className={css(styles.cardGrid)}>
+                <div className={css(styles.cardGrid5)}>
+                  {dataDavidQ.map((item, key) =>
+                    <div key={key} className={css(styles.cardSecondSubCol)}>
+                      <StyledImageCircle size="small" imgSrc={item.imgsrc} />
+                      <p className={css(styles.qcasttitle)}>{item.title}</p>
+                      <div className={css(styles.sendBtn)}>Send</div>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
+            </CustomScrollbars>
           </div>
         </div>}
         <div className={css(styles.footerContainerWrapper)}>

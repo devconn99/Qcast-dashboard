@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { css } from "aphrodite";
 import { NavLink, useLocation } from "react-router-dom";
 import queryString from "query-string";
-
+import { Scrollbars } from 'react-custom-scrollbars';
 import { ROUTES } from "../../constants";
 import styles from "./styles";
 
@@ -22,6 +22,22 @@ import img_message1 from "../../assets/images/icons/message1.png";
 import img_arrow_left from "../../assets/images/icons/arrow_left.png";
 
 import img_noResult from "assets/images/icons/noResult.png";
+
+const renderThumb = ({ style, ...props }) => {
+  const thumbStyle = {
+    borderRadius: 6,
+    backgroundColor: '#BBCFEA'
+  };
+  return <div style={{ ...style, ...thumbStyle }} {...props} />;
+};
+
+const CustomScrollbars = props => (
+  <Scrollbars
+    renderThumbHorizontal={renderThumb}
+    renderThumbVertical={renderThumb}
+    {...props}
+  />
+);
 
 export default function StyledSidebar(props) {
   console.log("propssss", props);
@@ -56,7 +72,7 @@ export default function StyledSidebar(props) {
   const [dataJessicaFiltered, setDataJessicaFiltered] = useState(dataJessica5);
 
   const handleInputChange = (e) => {
-    if (!isSeach) {newMsgBtnClick()}
+    if (!isSeach) { newMsgBtnClick() }
     var filteredData = dataJessica5.filter((data) => {
       return (data.title.toLowerCase()).indexOf(e.target.value.toLowerCase()) >= 0;
     });
@@ -360,6 +376,7 @@ export default function StyledSidebar(props) {
           return (
             <div className={css(styles.container)} style={{ width: "400px" }}>
               <div style={{ position: "fixed" }}>
+              <CustomScrollbars style={{ width: "400px", height: 750 }}>
                 <div className={css(styles.siderContainer)}>
                   <div className={css(styles.searchContainer)}>
                     {!isSeach &&
@@ -393,7 +410,7 @@ export default function StyledSidebar(props) {
                           onChange={(e) => handleInputChange(e)}
                           onKeyDown={handleInputKeyDown}
                         />
-                        <span className={css(styles.clearBtn)}  onClick={(e) => searchClearBtnClick(e)}>
+                        <span className={css(styles.clearBtn)} onClick={(e) => searchClearBtnClick(e)}>
                           <img
                             src={img_clear}
                             alt=""
@@ -472,6 +489,7 @@ export default function StyledSidebar(props) {
                     </div>
                   }
                 </div>
+                </CustomScrollbars>
               </div>
             </div>
           );

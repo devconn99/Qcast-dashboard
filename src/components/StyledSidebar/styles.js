@@ -6,7 +6,7 @@ export default StyleSheet.create({
   container: {
     // width: "285px",
     // height:"1500px",
-    display:"fixed",
+    display: "fixed",
     paddingLeft: 0,
     paddingRight: 0,
     paddingTop: 32,
@@ -72,7 +72,7 @@ export default StyleSheet.create({
     marginBottom: 48,
     display: "flex",
     flexDirection: "column",
-    height:760,
+    height: 760,
     overflow: "auto"
   },
 
@@ -129,7 +129,7 @@ export default StyleSheet.create({
   },
   navButtonParent1: {
     display: "flex",
-    minWidth:"244px",
+    minWidth: "244px",
     alignItems: "center",
     justifyContent: "space-between",
     cursor: "pointer",
@@ -170,16 +170,11 @@ export default StyleSheet.create({
 
   // messenger
   siderContainer: {
-    // paddingLeft: 16,
-    // paddingRight: 20,
-    height: 750,
-    overflow: "auto"
+    width: 400,
   },
   searchContainer: {
     paddingLeft: 16,
     paddingRight: 20,
-    // height: 750,
-    // overflow: "auto"
   },
   newMessage: {
     display: "flex",
@@ -229,7 +224,7 @@ export default StyleSheet.create({
   },
   seachBox: {
     width: "100%",
-    height:50,
+    height: 50,
     background: "Linear-gradient(171.89deg, #F0F6FB 2.42%, #E3F1FE 96.87%);",
     boxShadow: "inset -2px -5px 7px rgba(255, 255, 255, 0.7), inset 2px 5px 8px rgba(0, 0, 0, 0.25)",
     borderRadius: 10,
@@ -243,7 +238,7 @@ export default StyleSheet.create({
   },
   seachBox1: {
     width: 270,
-    height:50,
+    height: 50,
     background: "Linear-gradient(171.89deg, #F0F6FB 2.42%, #E3F1FE 96.87%);",
     boxShadow: "inset -2px -5px 7px rgba(255, 255, 255, 0.7), inset 2px 5px 8px rgba(0, 0, 0, 0.25)",
     borderRadius: 10,
