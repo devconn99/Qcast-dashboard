@@ -91,7 +91,7 @@ export default StyleSheet.create({
     height: 40,
     cursor: "pointer",
   },
-  
+
   container: {
     position: "relative"
   },
@@ -225,7 +225,7 @@ export default StyleSheet.create({
   },
   groupName: {
     width: "100%",
-    height:60,
+    height: 60,
     background: "Linear-gradient(171.89deg, #F0F6FB 2.42%, #E3F1FE 96.87%);",
     boxShadow: "inset -2px -5px 7px rgba(255, 255, 255, 0.7), inset 2px 5px 8px rgba(0, 0, 0, 0.25)",
     borderRadius: 5,
@@ -287,9 +287,57 @@ export default StyleSheet.create({
     padding: 10,
     marginLeft: 10,
     background: "Linear-gradient(135.07deg, #F1F9FF 6.66%, #DCE8F7 104.83%);",
-		boxShadow:
-			"1px -3px 10px rgba(255, 255, 255, 0.7), 5px 3px 10px rgba(0, 0, 0, 0.18)",
-		border: "none",
+    boxShadow:
+      "1px -3px 10px rgba(255, 255, 255, 0.7), 5px 3px 10px rgba(0, 0, 0, 0.18)",
+    border: "none",
     borderRadius: 10,
+  },
+
+  // settings
+  settingsTitle: {
+    display: "flex",
+    padding: 30,
+    fontSize: 24,
+    lineHeight: "36px",
+    fontFamily: "Poppins",
+    color: "#515A6B",
+    fontStyle: "nomal",
+    fontWeight: "bold",
+    marginBottom: 0
+  },
+  settingsContainer: {
+    display: "flex",
+    flexFlow: "column",
+    paddingLeft: 30,
+    paddingRight: 30,
+  },
+  settingsItems: {
+    display: "flex",
+    justifyContent: "space-between",
+    marginBottom: 30
+  },
+  settingsItem: {
+    width: "46%",
+    padding: 20,
+    background: "#F1F9FF",
+    boxShadow: "-1px -3px 10px rgba(255, 255, 255, 0.7), 5px 3px 10px rgba(0, 0, 0, 0.18)",
+    border: "none",
+    borderRadius: 10,
+  },
+  settingsItemTitle: {
+    fontFamily: "Poppins",
+    fontStyle: "normal",
+    fontWeight: 600,
+    fontSize: 18,
+    lineHeight: "27px",
+    color: "#7B94B5",
+  },
+  settingsItemContent: {
+    fontFamily: "Poppins",
+    fontStyle: "normal",
+    fontWeight: "normal",
+    fontSize: 14,
+    lineHeight: "21px",
+    color: "#7B94B5",
   },
 })

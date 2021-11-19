@@ -8,7 +8,7 @@ import { Modal } from 'react-responsive-modal';
 
 import { ROUTES } from "../../constants";
 import styles from "./styles";
-import { StyledCardPopular, StyledImageCircle, StyledButtonSimpleFluidLittle } from "components"
+import { StyledCardPopular, StyledImageCircle, StyledButtonSimpleFluidLittle, StyledButtonSimpleFluid } from "components"
 
 import img_cocacola from "../../assets/images/icons/cocacola.png";
 import img_peugeot from "../../assets/images/icons/peugeot.png";
@@ -32,7 +32,6 @@ import img_op_0 from "assets/images/icons/op_0.png";
 import img_op_1 from "assets/images/icons/op_1.png";
 
 const UserTeam = (props) => {
-  console.log("propssss 000", props);
   const location = useLocation();
   const params = queryString.parse(location.search);
 
@@ -52,11 +51,6 @@ const UserTeam = (props) => {
   };
 
   const [addOp, setAddOp] = useState(false)
-
-  const handleOnClickForward = (selectedID) => {
-    console.log("Forward");
-    setOpen(true);
-  };
 
   const handleSearch = (searchKey) => {
     // window.location.href = ROUTES.USER_HOME_DISCOVER_SEARCH;
@@ -78,7 +72,10 @@ const UserTeam = (props) => {
   };
   const addMember = (e) => {
   };
+
+  const [isSetting, setIsSetting] = useState(false);
   const setSetting = (e) => {
+    setIsSetting(!isSetting)
   };
 
   const [step, setStep] = useState(1);
@@ -142,7 +139,7 @@ const UserTeam = (props) => {
             </div>
           </div>
           <div className={css(styles.ctrlBtn)}>
-            <StyledButtonSimpleFluidLittle
+            <StyledButtonSimpleFluid
               size={18}
               value={"+ Add team members"}
               img_people={"none"}
@@ -150,10 +147,11 @@ const UserTeam = (props) => {
             />
           </div>
           <div className={css(styles.ctrlBtn)}>
-            <StyledButtonSimpleFluidLittle
-              size={18}
+            <StyledButtonSimpleFluid
+              size={16}
               value={"Settings"}
               img_people={"none"}
+              isActive={isSetting}
               buttonOnClick={(e) => setSetting()}
             />
           </div>
@@ -161,81 +159,146 @@ const UserTeam = (props) => {
       </div>
 
       <div className={css(styles.container)}>
-        <div className={css(styles.containerLeft)}>
-          <div className={css(styles.msgCard)}>
-            <div className={css(styles.msgCardCol)}>
-              <StyledCardPopular
-                imgSrc={img_logo}
-                txtTitle={"David Jacob"}
-                txtContent={"12 Questions to ask yourself when raising more than one child"}
-              />
+        {
+          !isSetting &&
+          <>
+            <div className={css(styles.containerLeft)}>
+              <div className={css(styles.msgCard)}>
+                <div className={css(styles.msgCardCol)}>
+                  <StyledCardPopular
+                    imgSrc={img_logo}
+                    txtTitle={"David Jacob"}
+                    txtContent={"12 Questions to ask yourself when raising more than one child"}
+                  />
+                </div>
+                <div className={css(styles.timeState)}>
+                  8:01 pm
+                  <img
+                    src={img_read}
+                    alt=""
+                    className={css(styles.img_read)}
+                  />
+                </div>
+              </div>
+              <div className={css(styles.msgCard)}>
+                <div className={css(styles.msgCardCol)}>
+                  <StyledCardPopular
+                    imgSrc={img_logo}
+                    txtTitle={"David Jacob"}
+                    txtContent={"12 Questions to ask yourself when raising more than one child"}
+                  />
+                </div>
+                <div className={css(styles.timeState)}>
+                  8:01 pm
+                  <img
+                    src={img_read}
+                    alt=""
+                    className={css(styles.img_read)}
+                  />
+                </div>
+              </div>
+              <div className={css(styles.msgCard)}>
+                <div className={css(styles.msgCardCol)}>
+                  <StyledCardPopular
+                    imgSrc={img_logo}
+                    txtTitle={"David Jacob"}
+                    txtContent={"12 Questions to ask yourself when raising more than one child"}
+                  />
+                </div>
+                <div className={css(styles.timeState)}>
+                  8:01 pm
+                  <img
+                    src={img_read}
+                    alt=""
+                    className={css(styles.img_read)}
+                  />
+                </div>
+              </div>
             </div>
-            <div className={css(styles.timeState)}>
-              8:01 pm
-              <img
-                src={img_read}
-                alt=""
-                className={css(styles.img_read)}
-              />
+            <div className={css(styles.containerRight)}>
+              <div className={css(styles.msgCard)}>
+                <div className={css(styles.msgCardCol)}>
+                  <StyledCardPopular
+                    imgSrc={img_logo}
+                    txtTitle={"David Jacob"}
+                    txtContent={"12 Questions to ask yourself when raising more than one child"}
+                  />
+                </div>
+                <div className={css(styles.timeState)}>
+                  8:01 pm
+                  <img
+                    src={img_read}
+                    alt=""
+                    className={css(styles.img_read)}
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-          <div className={css(styles.msgCard)}>
-            <div className={css(styles.msgCardCol)}>
-              <StyledCardPopular
-                imgSrc={img_logo}
-                txtTitle={"David Jacob"}
-                txtContent={"12 Questions to ask yourself when raising more than one child"}
-              />
+          </>
+        }
+        {
+          isSetting &&
+          <>
+            <p className={css(styles.settingsTitle)}>Workspace settings</p>
+            <div className={css(styles.settingsContainer)}>
+              <div className={css(styles.settingsItems)}>
+                <div className={css(styles.settingsItem)}>
+                  <p className={css(styles.settingsItemTitle)}>Workspace icon</p>
+                  <p className={css(styles.settingsItemContent)}>Add an icon to make it easier to identify your workspace.</p>
+                  <div className={css(styles.settingsBtn)}>
+                    <StyledButtonSimpleFluidLittle
+                      size={18}
+                      value={"Upload icon"}
+                      img_people={"none"}
+                      buttonOnClick={(e) => addMember()}
+                    />
+                  </div>
+                </div>
+                <div className={css(styles.settingsItem)}>
+                  <p className={css(styles.settingsItemTitle)}>Workspace icon</p>
+                  <p className={css(styles.settingsItemContent)}>Add an icon to make it easier to identify your workspace.</p>
+                  <div className={css(styles.settingsBtn)}>
+                    <StyledButtonSimpleFluidLittle
+                      size={18}
+                      value={"Rename workspace"}
+                      img_people={"none"}
+                      buttonOnClick={(e) => addMember()}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className={css(styles.settingsItems)}>
+                <div className={css(styles.settingsItem)}>
+                  <p className={css(styles.settingsItemTitle)}>Workspace icon</p>
+                  <p className={css(styles.settingsItemContent)}>Add an icon to make it easier to identify your workspace.</p>
+                  <div className={css(styles.settingsBtn)}>
+                    <StyledButtonSimpleFluidLittle
+                      size={18}
+                      value={"Change wallpaper"}
+                      img_people={"none"}
+                      buttonOnClick={(e) => addMember()}
+                    />
+                  </div>
+                </div>
+                <div className={css(styles.settingsItem)}>
+                  <p className={css(styles.settingsItemTitle)}>Workspace icon</p>
+                  <p className={css(styles.settingsItemContent)}>Add an icon to make it easier to identify your workspace.</p>
+                  <div className={css(styles.settingsBtn)}>
+                    <StyledButtonSimpleFluidLittle
+                      size={18}
+                      value={"Delete workspace"}
+                      img_people={"none"}
+                      buttonOnClick={(e) => addMember()}
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className={css(styles.timeState)}>
-              8:01 pm
-              <img
-                src={img_read}
-                alt=""
-                className={css(styles.img_read)}
-              />
-            </div>
-          </div>
-          <div className={css(styles.msgCard)}>
-            <div className={css(styles.msgCardCol)}>
-              <StyledCardPopular
-                imgSrc={img_logo}
-                txtTitle={"David Jacob"}
-                txtContent={"12 Questions to ask yourself when raising more than one child"}
-              />
-            </div>
-            <div className={css(styles.timeState)}>
-              8:01 pm
-              <img
-                src={img_read}
-                alt=""
-                className={css(styles.img_read)}
-              />
-            </div>
-          </div>
-        </div>
-        <div className={css(styles.containerRight)}>
-          <div className={css(styles.msgCard)}>
-            <div className={css(styles.msgCardCol)}>
-              <StyledCardPopular
-                imgSrc={img_logo}
-                txtTitle={"David Jacob"}
-                txtContent={"12 Questions to ask yourself when raising more than one child"}
-              />
-            </div>
-            <div className={css(styles.timeState)}>
-              8:01 pm
-              <img
-                src={img_read}
-                alt=""
-                className={css(styles.img_read)}
-              />
-            </div>
-          </div>
-        </div>
+          </>
+        }
       </div>
 
-      <div className={css(styles.footerContainer)}>
+      {!isSetting && <div className={css(styles.footerContainer)}>
         <div className={css(styles.footerContainerWrapper)}>
           <div className={css(styles.msgBtn)}>
             <img
@@ -276,7 +339,7 @@ const UserTeam = (props) => {
             />
           </div>
         </div>
-      </div>
+      </div>}
 
       <Modal
         open={params.location == "addgroup" ? true : false}
