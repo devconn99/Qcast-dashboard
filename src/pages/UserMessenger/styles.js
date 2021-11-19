@@ -28,7 +28,13 @@ export default StyleSheet.create({
     height: 70,
     paddingLeft: 10,
     paddingRight: 10,
-    cursor: "pointer"
+    cursor: "pointer",
+    fontSize: 24,
+    lineHeight: "36px",
+    fontFamily: "Poppins",
+    color: "#515A6B",
+    fontStyle: "nomal",
+    fontWeight: "bold",
   },
   ctrlBtns: {
   },
