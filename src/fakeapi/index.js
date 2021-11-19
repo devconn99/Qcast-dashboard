@@ -53,6 +53,7 @@ import imgTopics23 from "assets/images/avatar/topics/23.png";
 import imgQcastersProfileSrc1 from "assets/images/avatar/qcastersProfile/1.png";
 import imgQcastersProfileBgSrc1 from "assets/images/background/qcastersProfile/1.png";
 import imgQcastersProfileBgSrc2 from "assets/images/background/qcastersProfile/2.png";
+import imgMessageLisa from "assets/images/avatar/lisa.png";
 export const dataFeatured = [
   {
     title: "Capital Questions",
@@ -422,6 +423,22 @@ export const dataJessica = Array(12).fill({
   title: "Jessica Parker",
   motto: "Husband +Father of six",
   description: "I’m from a big family and have begun my own, so have a lot of helpful tips to raising a big family well. Hope my questions help you find the answers you’re looking for.",
+})
+export const dataJessica5 = Array(5).fill({
+  id: 123123,
+  imgsrc: imgQcastersProfileSrc1,
+  backGround: ChanelBackGround,
+  title: "Jessica Parker",
+  motto: "Husband +Father of six",
+  description: "I’m from a big family and have begun my own, so have a lot of helpful tips to raising a big family well. Hope my questions help you find the answers you’re looking for.",
+})
+export const dataMessages = Array(12).fill({
+  id: 123123,
+  imgsrc: imgMessageLisa,
+  title: "Lisa Stuart",
+  timestamp: "15 March, 8:11 pm",
+  message: "Hi Mansoor, do you need any help?",
+  number: 1,
 })
 export const dataQcastersProfile = Array(10).fill({
   id: 123123,
