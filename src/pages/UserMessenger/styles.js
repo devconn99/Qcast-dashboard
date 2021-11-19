@@ -178,6 +178,18 @@ export default StyleSheet.create({
     borderRadius: 100,
     cursor: "pointer"
   },
+  msgBtnActive: {
+    display: "flex",
+    width: 40,
+    height: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    boxShadow:
+      "inset -2px -5px 7px rgba(255, 255, 255, 0.7), inset 2px 5px 8px rgba(0, 0, 0, 0.25)",
+    border: "none",
+    borderRadius: 100,
+    cursor: "pointer"
+  },
   msgContent: {
     width: "80%",
   },
@@ -292,7 +304,7 @@ export default StyleSheet.create({
   },
   img_20: {
     height: 20,
-    marginRight: 5,
+    // marginRight: 5,
   },
   img_20_p_4_ml_4: {
     height: 20,
@@ -320,7 +332,7 @@ export default StyleSheet.create({
     paddingBottom: 10
   },
   sendQcastBoxContent: {
-    width: 1500,
+    width: 1200,
     padding: 30,
     background: "#e7f3fd",
     boxShadow:

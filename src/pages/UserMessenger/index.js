@@ -21,9 +21,9 @@ import img_send from "assets/images/icons/send.png";
 const UserMessenger = (props) => {
   // console.log("propssss 000", props);
 
-  const [open, setOpen] = useState(false);
+  const [openQcasts, setOpenQcasts] = useState(false);
   const openSendQcastBox = () => {
-    setOpen(!open)
+    setOpenQcasts(!openQcasts)
   };
   const handleInputChange = (searchKey) => {
     // window.location.href = ROUTES.USER_HOME_DISCOVER_SEARCH;
@@ -121,7 +121,7 @@ const UserMessenger = (props) => {
       </div>
 
       <div className={css(styles.footerContainer)}>
-        {open && <div className={css(styles.sendQcastBox)}>
+        {openQcasts && <div className={css(styles.sendQcastBox)}>
           <div className={css(styles.sendQcastBoxContent)}>
             <ul className={css(styles.menuMiddleContent)}>
               <li className={ isSelect == 0 ? css(styles.tabActive) : css(styles.tab)} onClick={e => userSelected(0)}>
@@ -165,7 +165,7 @@ const UserMessenger = (props) => {
               className={css(styles.img_20)}
             />
           </div>
-          <div className={css(styles.msgBtn)} onClick={(e) => openSendQcastBox(e)}>
+          <div className={!openQcasts ? css(styles.msgBtn) : css(styles.msgBtnActive)} onClick={(e) => openSendQcastBox(e)}>
             <img
               src={img_msg_1}
               alt=""
