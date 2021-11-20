@@ -104,15 +104,15 @@ export default StyleSheet.create({
   },
 
   containerSlide:{
-    
+    marginBottom: 55,
   },
   cardsSlider: {
     display: "flex",
-    width: 1500,
-    overflow: "auto",
+    height: "auto",
+    // overflow: "auto",
     marginLeft: "auto",
     marginRight: "auto",
-    marginBottom: 55,
+    // marginBottom: 55,
   },
   cardSecondSubCol: {
     width: 300,
