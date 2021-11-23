@@ -635,32 +635,12 @@ export const dataMyFavouritesResponses = [
   },
 ]
 
-export const dataMyFavouritesResponsesResponder = [
-  {
+export const dataMyFavouritesResponsesResponder = Array(8).fill({
     title: "Myleene Klass",
     content: "I tried to answer Lisa’s questions about scool leavers",
     imgsrc: imgPopularSrc1,
     imgSmall: ChanelLogo,
-  },
-  {
-    title: "Myleene Klass",
-    content: "I tried to answer Lisa’s questions about scool leavers",
-    imgsrc: imgPopularSrc1,
-    imgSmall: ChanelLogo,
-  },
-  {
-    title: "Myleene Klass",
-    content: "I tried to answer Lisa’s questions about scool leavers",
-    imgsrc: imgPopularSrc1,
-    imgSmall: ChanelLogo,
-  },
-  {
-    title: "Myleene Klass",
-    content: "I tried to answer Lisa’s questions about scool leavers",
-    imgsrc: imgPopularSrc1,
-    imgSmall: ChanelLogo,
-  },
-]
+  })
 
 export const jacobRespond = Array(3).fill({
   id: 123123,

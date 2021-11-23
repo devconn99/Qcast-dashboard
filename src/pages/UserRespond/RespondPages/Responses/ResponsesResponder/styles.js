@@ -5,9 +5,8 @@ export default StyleSheet.create({
         paddingRight: 30,
         paddingTop: 10,
     },
-    cardRespondResponses: {
-        paddingTop: 20,
-        paddingBottom: 20,
+    containerResponsedAll: {
+        display: "flex",
     },
     imgSrc: {
         height: 80,
@@ -21,10 +20,32 @@ export default StyleSheet.create({
     cardRespondedRow: {
         display: "flex",
         justifyContent: "center",
-        width: "100%",
         marginTop: 30,
     },
-
+    subCardsRow0: {
+        position: "relative",
+    },
+    subCardsRow1: {
+        display: "flex",
+    },
+    subCardsRow2: {
+        position: "absolute",
+        width: 200,
+        height: "80%",
+        top: 30,
+        right: 0,
+        background: "#FFFFFF40",
+        // opacity: "0.9",
+        borderRadius: 30
+    },
+    arrow_icon: {
+        width: "100%",
+        height: "100%",
+        paddingTop: 52,
+        paddingBottom: 72,
+        paddingRight: 90,
+        paddingLeft: 90,
+    },
     linkButtonActive: {
         display: "block",
         paddingTop: 12,
@@ -98,8 +119,12 @@ export default StyleSheet.create({
     },
 
     cardSavedRow: {
-        maxWidth: 280,
+        // maxWidth: 280,
         marginTop: 20,
+    },
+    cardSavedRow1: {
+        width: 285,
+        margin: 10,
     },
 
     rowCenter: {

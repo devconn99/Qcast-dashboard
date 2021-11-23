@@ -16,7 +16,8 @@ export default StyleSheet.create({
 
     rowCenter: {
         display: "flex",
-        justifyContent: "center",
+        // justifyContent: "center",
+        paddingLeft: 30
     },
 
     cardSavedRow: {
@@ -26,6 +27,7 @@ export default StyleSheet.create({
 
     cardPlRow: {
         display: "grid",
+        width: "100%",
         gridTemplateColumns: "repeat(1, 1fr)",
         "@media (min-width: 900px)": {
             gridTemplateColumns: "repeat(2, 1fr)",
@@ -34,11 +36,11 @@ export default StyleSheet.create({
             gridTemplateColumns: "repeat(3, 1fr)",
         },
         "@media (min-width: 1400px)": {
-            gridTemplateColumns: "repeat(4, 1fr)",
-        },
-        "@media (min-width: 1500px)": {
             gridTemplateColumns: "repeat(5, 1fr)",
         },
+        // "@media (min-width: 1500px)": {
+        //     gridTemplateColumns: "repeat(5, 1fr)",
+        // },
     },
 
     linkButtonActive: {
@@ -135,6 +137,19 @@ export default StyleSheet.create({
         "@media (min-width: 1500px)": {
             gridTemplateColumns: "repeat(5, 1fr)",
         },
+    },
+    cardPopularSubCol: {
+        marginTop: 10,
+        marginBottom: 20,
+        // "@media (min-width: 900px)": {
+        //     width: "50%"
+        // },
+        // "@media (min-width: 1200px)": {
+        //     width: "32%"
+        // },
+        // "@media (min-width: 1400px)": {
+        //     width: "20%"
+        // },
     },
     cardResponsed: {
         color: "#7B94B5",

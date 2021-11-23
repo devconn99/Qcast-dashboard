@@ -117,6 +117,7 @@ export default StyleSheet.create({
   },
 
   imgSaved: {
+    position: "relative",
     height: 80,
     width: 80,
   },
@@ -256,7 +257,7 @@ export default StyleSheet.create({
 
   imgRespLarge: {
     height: 145,
-    marginBottom: 35,
+    // marginBottom: 35,
   },
 
   respContent: {
@@ -337,8 +338,8 @@ export default StyleSheet.create({
 
   imgResponseSmall: {
     position: "absolute",
-    marginTop: 51,
-    marginLeft: 53,
+    top: 50,
+    right: 0,
     border: 2,
   },
 

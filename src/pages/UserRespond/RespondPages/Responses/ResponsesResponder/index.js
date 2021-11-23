@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { css } from "aphrodite";
 import styles from "./styles";
-import {Container, Navbar, Row, Col} from "react-bootstrap";
+import { Container, Navbar, Row, Col } from "react-bootstrap";
+import { Scrollbars } from 'react-custom-scrollbars';
 
 import {
     dataDiscoverSearchResults,
@@ -15,8 +16,25 @@ import {
     StyledCardResponses, StyledResponsedResp
 } from "../../../../../components/BasicComponents/StyledCards";
 import queryString from "query-string";
-import {NavLink} from "react-router-dom";
-import {ROUTES} from "../../../../../constants";
+import { NavLink } from "react-router-dom";
+import { ROUTES } from "../../../../../constants";
+import img_arrow_right from "assets/images/icons/arrow_right-black.png";
+
+const renderThumb = ({ style, ...props }) => {
+    const thumbStyle = {
+        borderRadius: 6,
+        backgroundColor: '#BBCFEA'
+    };
+    return <div style={{ ...style, ...thumbStyle }} {...props} />;
+};
+
+const CustomScrollbars = props => (
+    <Scrollbars
+        renderThumbHorizontal={renderThumb}
+        renderThumbVertical={renderThumb}
+        {...props}
+    />
+);
 
 const UserRespondResponsesResponder = (props) => {
     const params = queryString.parse(props.location.search);
@@ -30,7 +48,6 @@ const UserRespondResponsesResponder = (props) => {
     return (
         <Container fluid className={css(styles.container)}>
             <div className={css(styles.containerResponsedAll)}>
-
                 <Navbar className={css(styles.navBar)}>
                     <div>
                         <ul className={css(styles.navBarUl)}>
@@ -55,10 +72,10 @@ const UserRespondResponsesResponder = (props) => {
                 </Navbar>
             </div>
 
-            <Row className={css(styles.containerResponsedAll)}>
-                <Row className={css(styles.cardRespondedRow)}>
+            <div className={css(styles.containerResponsedAll)}>
+                <div className={css(styles.cardRespondedRow)}>
                     {dataRespRe.map((item, key) =>
-                        <Col className={css(styles.cardPopularSubCol)} key={key}>
+                        <div className={css(styles.cardPopularSubCol)} key={key}>
                             <StyledResponsedResp
                                 imgSrc={item.imgsrc}
                                 txtTitle={item.title}
@@ -67,27 +84,39 @@ const UserRespondResponsesResponder = (props) => {
                                 txtSubTitle={item.subTitle}
                                 txtSubContent={item.subContent}
                             />
-                        </Col>
+                        </div>
                     )}
-                </Row>
-                {dataMyFavouritesResponsesResponder.map((item, key) =>
-                    <Col xl={4} className={css(styles.cardSavedRow)} key={key}>
-                        <StyledCardAllResponses
-                            imgSrc={item.imgsrc}
-                            imgSmall={item.imgSmall}
-                            txtTitle={item.title}
-                            txtContent={item.content}
-                            buttonValue={"Play"}
-                            buttonOnClick={(e) => handleOnClickRouteToPlayer()}
-                        />
-                    </Col>
-                )}
-            </Row>
-
-            <Row className={css(styles.containerResponsedAll)}>
-                <Row className={css(styles.cardRespondedRow)}>
+                </div>
+                <div className={css(styles.subCardsRow0)}>
+                    <CustomScrollbars style={{ height: 220, width: 1200 }}>
+                        <div className={css(styles.subCardsRow1)}>
+                            {dataMyFavouritesResponsesResponder.map((item, key) =>
+                                <div className={css(styles.cardSavedRow)} key={key}>
+                                    <div className={css(styles.cardSavedRow1)} key={key}>
+                                        <StyledCardAllResponses
+                                            imgSrc={item.imgsrc}
+                                            imgSmall={item.imgSmall}
+                                            txtTitle={item.title}
+                                            txtContent={item.content}
+                                            buttonValue={"Play"}
+                                            buttonOnClick={(e) => handleOnClickRouteToPlayer()}
+                                        />
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </CustomScrollbars>
+                    <div className={css(styles.subCardsRow2)}>
+                        <div className={css(styles.subCardsRow2)}>
+                            <img src={img_arrow_right} className={css(styles.arrow_icon)}></img>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={css(styles.containerResponsedAll)}>
+                <div className={css(styles.cardRespondedRow)}>
                     {dataRespRe.map((item, key) =>
-                        <Col className={css(styles.cardPopularSubCol)} key={key}>
+                        <div className={css(styles.cardPopularSubCol)} key={key}>
                             <StyledResponsedResp
                                 imgSrc={item.imgsrc}
                                 txtTitle={item.title}
@@ -96,27 +125,39 @@ const UserRespondResponsesResponder = (props) => {
                                 txtSubTitle={item.subTitle}
                                 txtSubContent={item.subContent}
                             />
-                        </Col>
+                        </div>
                     )}
-                </Row>
-                {dataMyFavouritesResponsesResponder.map((item, key) =>
-                    <Col xl={12} className={css(styles.cardSavedRow)} key={key}>
-                        <StyledCardAllResponses
-                            imgSrc={item.imgsrc}
-                            imgSmall={item.imgSmall}
-                            txtTitle={item.title}
-                            txtContent={item.content}
-                            buttonValue={"Play"}
-                            buttonOnClick={(e) => handleOnClickRouteToPlayer()}
-                        />
-                    </Col>
-                )}
-            </Row>
-
-            <Row className={css(styles.containerResponsedAll)}>
-                <Row className={css(styles.cardRespondedRow)}>
+                </div>
+                <div className={css(styles.subCardsRow0)}>
+                    <CustomScrollbars style={{ height: 220, width: 1200 }}>
+                        <div className={css(styles.subCardsRow1)}>
+                            {dataMyFavouritesResponsesResponder.map((item, key) =>
+                                <div className={css(styles.cardSavedRow)} key={key}>
+                                    <div className={css(styles.cardSavedRow1)} key={key}>
+                                        <StyledCardAllResponses
+                                            imgSrc={item.imgsrc}
+                                            imgSmall={item.imgSmall}
+                                            txtTitle={item.title}
+                                            txtContent={item.content}
+                                            buttonValue={"Play"}
+                                            buttonOnClick={(e) => handleOnClickRouteToPlayer()}
+                                        />
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </CustomScrollbars>
+                    <div className={css(styles.subCardsRow2)}>
+                        <div className={css(styles.subCardsRow2)}>
+                            <img src={img_arrow_right} className={css(styles.arrow_icon)}></img>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={css(styles.containerResponsedAll)}>
+                <div className={css(styles.cardRespondedRow)}>
                     {dataRespRe.map((item, key) =>
-                        <Col className={css(styles.cardPopularSubCol)} key={key}>
+                        <div className={css(styles.cardPopularSubCol)} key={key}>
                             <StyledResponsedResp
                                 imgSrc={item.imgsrc}
                                 txtTitle={item.title}
@@ -125,27 +166,39 @@ const UserRespondResponsesResponder = (props) => {
                                 txtSubTitle={item.subTitle}
                                 txtSubContent={item.subContent}
                             />
-                        </Col>
+                        </div>
                     )}
-                </Row>
-                {dataMyFavouritesResponsesResponder.map((item, key) =>
-                    <Col xl={12} className={css(styles.cardSavedRow)} key={key}>
-                        <StyledCardAllResponses
-                            imgSrc={item.imgsrc}
-                            imgSmall={item.imgSmall}
-                            txtTitle={item.title}
-                            txtContent={item.content}
-                            buttonValue={"Play"}
-                            buttonOnClick={(e) => handleOnClickRouteToPlayer()}
-                        />
-                    </Col>
-                )}
-            </Row>
-
-            <Row className={css(styles.containerResponsedAll)}>
-                <Row className={css(styles.cardRespondedRow)}>
+                </div>
+                <div className={css(styles.subCardsRow0)}>
+                    <CustomScrollbars style={{ height: 220, width: 1200 }}>
+                        <div className={css(styles.subCardsRow1)}>
+                            {dataMyFavouritesResponsesResponder.map((item, key) =>
+                                <div className={css(styles.cardSavedRow)} key={key}>
+                                    <div className={css(styles.cardSavedRow1)} key={key}>
+                                        <StyledCardAllResponses
+                                            imgSrc={item.imgsrc}
+                                            imgSmall={item.imgSmall}
+                                            txtTitle={item.title}
+                                            txtContent={item.content}
+                                            buttonValue={"Play"}
+                                            buttonOnClick={(e) => handleOnClickRouteToPlayer()}
+                                        />
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </CustomScrollbars>
+                    <div className={css(styles.subCardsRow2)}>
+                        <div className={css(styles.subCardsRow2)}>
+                            <img src={img_arrow_right} className={css(styles.arrow_icon)}></img>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={css(styles.containerResponsedAll)}>
+                <div className={css(styles.cardRespondedRow)}>
                     {dataRespRe.map((item, key) =>
-                        <Col className={css(styles.cardPopularSubCol)} key={key}>
+                        <div className={css(styles.cardPopularSubCol)} key={key}>
                             <StyledResponsedResp
                                 imgSrc={item.imgsrc}
                                 txtTitle={item.title}
@@ -154,27 +207,39 @@ const UserRespondResponsesResponder = (props) => {
                                 txtSubTitle={item.subTitle}
                                 txtSubContent={item.subContent}
                             />
-                        </Col>
+                        </div>
                     )}
-                </Row>
-                {dataMyFavouritesResponsesResponder.map((item, key) =>
-                    <Col xl={12} className={css(styles.cardSavedRow)} key={key}>
-                        <StyledCardAllResponses
-                            imgSrc={item.imgsrc}
-                            imgSmall={item.imgSmall}
-                            txtTitle={item.title}
-                            txtContent={item.content}
-                            buttonValue={"Play"}
-                            buttonOnClick={(e) => handleOnClickRouteToPlayer()}
-                        />
-                    </Col>
-                )}
-            </Row>
-
-            <Row className={css(styles.containerResponsedAll)}>
-                <Row className={css(styles.cardRespondedRow)}>
+                </div>
+                <div className={css(styles.subCardsRow0)}>
+                    <CustomScrollbars style={{ height: 220, width: 1200 }}>
+                        <div className={css(styles.subCardsRow1)}>
+                            {dataMyFavouritesResponsesResponder.map((item, key) =>
+                                <div className={css(styles.cardSavedRow)} key={key}>
+                                    <div className={css(styles.cardSavedRow1)} key={key}>
+                                        <StyledCardAllResponses
+                                            imgSrc={item.imgsrc}
+                                            imgSmall={item.imgSmall}
+                                            txtTitle={item.title}
+                                            txtContent={item.content}
+                                            buttonValue={"Play"}
+                                            buttonOnClick={(e) => handleOnClickRouteToPlayer()}
+                                        />
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </CustomScrollbars>
+                    <div className={css(styles.subCardsRow2)}>
+                        <div className={css(styles.subCardsRow2)}>
+                            <img src={img_arrow_right} className={css(styles.arrow_icon)}></img>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={css(styles.containerResponsedAll)}>
+                <div className={css(styles.cardRespondedRow)}>
                     {dataRespRe.map((item, key) =>
-                        <Col className={css(styles.cardPopularSubCol)} key={key}>
+                        <div className={css(styles.cardPopularSubCol)} key={key}>
                             <StyledResponsedResp
                                 imgSrc={item.imgsrc}
                                 txtTitle={item.title}
@@ -183,173 +248,35 @@ const UserRespondResponsesResponder = (props) => {
                                 txtSubTitle={item.subTitle}
                                 txtSubContent={item.subContent}
                             />
-                        </Col>
+                        </div>
                     )}
-                </Row>
-                {dataMyFavouritesResponsesResponder.map((item, key) =>
-                    <Col xl={12} className={css(styles.cardSavedRow)} key={key}>
-                        <StyledCardAllResponses
-                            imgSrc={item.imgsrc}
-                            imgSmall={item.imgSmall}
-                            txtTitle={item.title}
-                            txtContent={item.content}
-                            buttonValue={"Play"}
-                            buttonOnClick={(e) => handleOnClickRouteToPlayer()}
-                        />
-                    </Col>
-                )}
-            </Row>
-
-            {/*<div className={css(styles.containerResponsedAll)}>*/}
-            {/*    <Row className={css(styles.rowCenter)}>*/}
-            {/*        <div className={css(styles.cardRespMain)}>*/}
-            {/*            {dataRespRe.map((item, key) =>*/}
-            {/*                <Col className={css(styles.cardPopularSubCol)} key={key}>*/}
-            {/*                    <StyledResponsedResp*/}
-            {/*                        imgSrc={item.imgsrc}*/}
-            {/*                        txtTitle={item.title}*/}
-            {/*                        txtContent={item.content}*/}
-            {/*                        viewCount={item.viewCount}*/}
-            {/*                        txtSubTitle={item.subTitle}*/}
-            {/*                        txtSubContent={item.subContent}*/}
-            {/*                    />*/}
-            {/*                </Col>*/}
-            {/*            )}*/}
-            {/*        </div>*/}
-            {/*        {dataMyFavouritesResponsesResponder.map((item, key) =>*/}
-            {/*            <Col xl={12} className={css(styles.cardSavedRow)} key={key}>*/}
-            {/*                <StyledCardAllResponses*/}
-            {/*                    imgSrc={item.imgsrc}*/}
-            {/*                    imgSmall={item.imgSmall}*/}
-            {/*                    txtTitle={item.title}*/}
-            {/*                    txtContent={item.content}*/}
-            {/*                    buttonValue={"Play"}*/}
-            {/*                    buttonOnClick={(e) => handleOnClickRouteToPlayer()}*/}
-            {/*                />*/}
-            {/*            </Col>*/}
-            {/*        )}*/}
-            {/*    </Row>*/}
-            {/*</div>*/}
-            {/*<div className={css(styles.containerResponsedAll)}>*/}
-            {/*    <div className={css(styles.cardRespondedRow)}>*/}
-            {/*        <div className={css(styles.cardRespMain)}>*/}
-            {/*            {dataRespRe.map((item, key) =>*/}
-            {/*                <div className={css(styles.cardPopularSubCol)} key={key}>*/}
-            {/*                    <StyledResponsedResp*/}
-            {/*                        imgSrc={item.imgsrc}*/}
-            {/*                        txtTitle={item.title}*/}
-            {/*                        txtContent={item.content}*/}
-            {/*                        viewCount={item.viewCount}*/}
-            {/*                        txtSubTitle={item.subTitle}*/}
-            {/*                        txtSubContent={item.subContent}*/}
-            {/*                    />*/}
-            {/*                </div>*/}
-            {/*            )}*/}
-            {/*        </div>*/}
-            {/*        {dataMyFavouritesResponsesResponder.map((item, key) =>*/}
-            {/*            <div className={css(styles.cardAllMain)} key={key}>*/}
-            {/*                <StyledCardAllResponses*/}
-            {/*                    imgSrc={item.imgsrc}*/}
-            {/*                    imgSmall={item.imgSmall}*/}
-            {/*                    txtTitle={item.title}*/}
-            {/*                    txtContent={item.content}*/}
-            {/*                    buttonValue={"Play"}*/}
-            {/*                    buttonOnClick={(e) => handleOnClickRouteToPlayer()}*/}
-            {/*                />*/}
-            {/*            </div>*/}
-            {/*        )}*/}
-            {/*    </div>*/}
-            {/*</div>*/}
-            {/*<div className={css(styles.containerResponsedAll)}>*/}
-            {/*    <div className={css(styles.cardRespondedRow)}>*/}
-            {/*        <div className={css(styles.cardRespMain)}>*/}
-            {/*            {dataRespRe.map((item, key) =>*/}
-            {/*                <div className={css(styles.cardPopularSubCol)} key={key}>*/}
-            {/*                    <StyledResponsedResp*/}
-            {/*                        imgSrc={item.imgsrc}*/}
-            {/*                        txtTitle={item.title}*/}
-            {/*                        txtContent={item.content}*/}
-            {/*                        viewCount={item.viewCount}*/}
-            {/*                        txtSubTitle={item.subTitle}*/}
-            {/*                        txtSubContent={item.subContent}*/}
-            {/*                    />*/}
-            {/*                </div>*/}
-            {/*            )}*/}
-            {/*        </div>*/}
-            {/*        {dataMyFavouritesResponsesResponder.map((item, key) =>*/}
-            {/*            <div className={css(styles.cardAllMain)} key={key}>*/}
-            {/*                <StyledCardAllResponses*/}
-            {/*                    imgSrc={item.imgsrc}*/}
-            {/*                    imgSmall={item.imgSmall}*/}
-            {/*                    txtTitle={item.title}*/}
-            {/*                    txtContent={item.content}*/}
-            {/*                    buttonValue={"Play"}*/}
-            {/*                    buttonOnClick={(e) => handleOnClickRouteToPlayer()}*/}
-            {/*                />*/}
-            {/*            </div>*/}
-            {/*        )}*/}
-            {/*    </div>*/}
-            {/*</div>*/}
-            {/*<div className={css(styles.containerResponsedAll)}>*/}
-            {/*    <div className={css(styles.cardRespondedRow)}>*/}
-            {/*        <div className={css(styles.cardRespMain)}>*/}
-            {/*            {dataRespRe.map((item, key) =>*/}
-            {/*                <div className={css(styles.cardPopularSubCol)} key={key}>*/}
-            {/*                    <StyledResponsedResp*/}
-            {/*                        imgSrc={item.imgsrc}*/}
-            {/*                        txtTitle={item.title}*/}
-            {/*                        txtContent={item.content}*/}
-            {/*                        viewCount={item.viewCount}*/}
-            {/*                        txtSubTitle={item.subTitle}*/}
-            {/*                        txtSubContent={item.subContent}*/}
-            {/*                    />*/}
-            {/*                </div>*/}
-            {/*            )}*/}
-            {/*        </div>*/}
-            {/*        {dataMyFavouritesResponsesResponder.map((item, key) =>*/}
-            {/*            <div className={css(styles.cardAllMain)} key={key}>*/}
-            {/*                <StyledCardAllResponses*/}
-            {/*                    imgSrc={item.imgsrc}*/}
-            {/*                    imgSmall={item.imgSmall}*/}
-            {/*                    txtTitle={item.title}*/}
-            {/*                    txtContent={item.content}*/}
-            {/*                    buttonValue={"Play"}*/}
-            {/*                    buttonOnClick={(e) => handleOnClickRouteToPlayer()}*/}
-            {/*                />*/}
-            {/*            </div>*/}
-            {/*        )}*/}
-            {/*    </div>*/}
-            {/*</div>*/}
-            {/*<div className={css(styles.containerResponsedAll)}>*/}
-            {/*    <div className={css(styles.cardRespondedRow)}>*/}
-            {/*        <div className={css(styles.cardRespMain)}>*/}
-            {/*            {dataRespRe.map((item, key) =>*/}
-            {/*                <div className={css(styles.cardPopularSubCol)} key={key}>*/}
-            {/*                    <StyledResponsedResp*/}
-            {/*                        imgSrc={item.imgsrc}*/}
-            {/*                        txtTitle={item.title}*/}
-            {/*                        txtContent={item.content}*/}
-            {/*                        viewCount={item.viewCount}*/}
-            {/*                        txtSubTitle={item.subTitle}*/}
-            {/*                        txtSubContent={item.subContent}*/}
-            {/*                    />*/}
-            {/*                </div>*/}
-            {/*            )}*/}
-            {/*        </div>*/}
-            {/*        {dataMyFavouritesResponsesResponder.map((item, key) =>*/}
-            {/*            <div className={css(styles.cardAllMain)} key={key}>*/}
-            {/*                <StyledCardAllResponses*/}
-            {/*                    imgSrc={item.imgsrc}*/}
-            {/*                    imgSmall={item.imgSmall}*/}
-            {/*                    txtTitle={item.title}*/}
-            {/*                    txtContent={item.content}*/}
-            {/*                    buttonValue={"Play"}*/}
-            {/*                    buttonOnClick={(e) => handleOnClickRouteToPlayer()}*/}
-            {/*                />*/}
-            {/*            </div>*/}
-            {/*        )}*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+                </div>
+                <div className={css(styles.subCardsRow0)}>
+                    <CustomScrollbars style={{ height: 220, width: 1200 }}>
+                        <div className={css(styles.subCardsRow1)}>
+                            {dataMyFavouritesResponsesResponder.map((item, key) =>
+                                <div className={css(styles.cardSavedRow)} key={key}>
+                                    <div className={css(styles.cardSavedRow1)} key={key}>
+                                        <StyledCardAllResponses
+                                            imgSrc={item.imgsrc}
+                                            imgSmall={item.imgSmall}
+                                            txtTitle={item.title}
+                                            txtContent={item.content}
+                                            buttonValue={"Play"}
+                                            buttonOnClick={(e) => handleOnClickRouteToPlayer()}
+                                        />
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    </CustomScrollbars>
+                    <div className={css(styles.subCardsRow2)}>
+                        <div className={css(styles.subCardsRow2)}>
+                            <img src={img_arrow_right} className={css(styles.arrow_icon)}></img>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </Container>
 
     );
