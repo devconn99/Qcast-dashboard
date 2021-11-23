@@ -19,6 +19,10 @@ export default StyleSheet.create({
     fontFamily: "Poppins",
   },
 
+  containerLoc: {
+    margin: 0,
+  },
+
   navigationButton: {
     display: "flex",
     // justifyContent: "center",
@@ -72,7 +76,7 @@ export default StyleSheet.create({
     marginBottom: 48,
     display: "flex",
     flexDirection: "column",
-    height: 760,
+    height: "100vh",
     overflow: "auto"
   },
 

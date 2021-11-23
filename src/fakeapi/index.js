@@ -532,3 +532,216 @@ export const dataDavidJacob=[
   list:"101 Questions to ask yourself about being a good dad"
 }
 ]
+
+// Respond section
+export const dataJessicaRespond = Array(7).fill({
+  id: 123123,
+  imgsrc: imgQcastersProfileSrc1,
+  backGround: ChanelBackGround,
+  title: "Jessica Parker",
+  motto: "Husband +Father of six",
+  description: "I’m from a big family and have begun my own, so have a lot of helpful tips to raising a big family well. Hope my questions help you find the answers you’re looking for.",
+})
+
+export const dataMostSavedQcastRespond = Array(5).fill([
+  {
+    title: "Myleene Klass",
+    content: "What does Classical music mean to you?",
+    imgsrc: imgPopularSrc1,
+  },
+])
+
+export const dataMyFavouritesRespond = [
+  {
+    title: "Myleene Klass",
+    content: "12 Questions to ask yourself when raising more than one child",
+    imgsrc: imgPopularSrc1,
+  },
+  {
+    title: "Myleene Klass",
+    content: "12 Questions to ask yourself when raising more than one child",
+    imgsrc: imgPopularSrc1,
+  },
+  {
+    title: "Myleene Klass",
+    content: "12 Questions to ask yourself when raising more than one child",
+    imgsrc: imgPopularSrc1,
+  },
+  {
+    title: "Myleene Klass",
+    content: "12 Questions to ask yourself when raising more than one child",
+    imgsrc: imgPopularSrc1,
+  },
+]
+
+export const dataMyFavouritesSavedQcasts = [
+  {
+    title: "Myleene Klass",
+    content: "What does Classical music mean to you?",
+    imgsrc: imgPopularSrc1,
+  },
+  {
+    title: "Myleene Klass",
+    content: "What does Classical music mean to you?",
+    imgsrc: imgPopularSrc1,
+  },
+  {
+    title: "Myleene Klass",
+    content: "What does Classical music mean to you?",
+    imgsrc: imgPopularSrc1,
+  },
+  {
+    title: "Myleene Klass",
+    content: "What does Classical music mean to you?",
+    imgsrc: imgPopularSrc1,
+  },
+  {
+    title: "Myleene Klass",
+    content: "What does Classical music mean to you?",
+    imgsrc: imgPopularSrc1,
+  },
+]
+
+export const dataMyFavouritesResponses = [
+  {
+    title: "Myleene Klass",
+    content: "What does Classical music mean to you?",
+    imgsrc: imgPopularSrc1,
+    imgSmall: ChanelLogo,
+  },
+  {
+    title: "Myleene Klass",
+    content: "What does Classical music mean to you?",
+    imgsrc: imgPopularSrc1,
+    imgSmall: ChanelLogo,
+  },
+  {
+    title: "Myleene Klass",
+    content: "What does Classical music mean to you?",
+    imgsrc: imgPopularSrc1,
+    imgSmall: ChanelLogo,
+  },
+  {
+    title: "Myleene Klass",
+    content: "What does Classical music mean to you?",
+    imgsrc: imgPopularSrc1,
+    imgSmall: ChanelLogo,
+  },
+  {
+    title: "Myleene Klass",
+    content: "What does Classical music mean to you?",
+    imgsrc: imgPopularSrc1,
+    imgSmall: ChanelLogo,
+  },
+]
+
+export const dataMyFavouritesResponsesResponder = [
+  {
+    title: "Myleene Klass",
+    content: "I tried to answer Lisa’s questions about scool leavers",
+    imgsrc: imgPopularSrc1,
+    imgSmall: ChanelLogo,
+  },
+  {
+    title: "Myleene Klass",
+    content: "I tried to answer Lisa’s questions about scool leavers",
+    imgsrc: imgPopularSrc1,
+    imgSmall: ChanelLogo,
+  },
+  {
+    title: "Myleene Klass",
+    content: "I tried to answer Lisa’s questions about scool leavers",
+    imgsrc: imgPopularSrc1,
+    imgSmall: ChanelLogo,
+  },
+  {
+    title: "Myleene Klass",
+    content: "I tried to answer Lisa’s questions about scool leavers",
+    imgsrc: imgPopularSrc1,
+    imgSmall: ChanelLogo,
+  },
+]
+
+export const jacobRespond = Array(3).fill({
+  id: 123123,
+  imgsrc: ChanelLogo,
+  backGround: ChanelBackGround,
+  title: "About Love",
+})
+
+export const dataRespRe = [
+  {
+    imgsrc: imgQcastersProfileSrc1,
+    title: "Lisa Stuart",
+    content: "Questions for school leavers: WHAT’S NEXT?????",
+    viewCount: [24, 24, 24],
+    subTitle: "Careers",
+    subContent: "12 Questions",
+  },
+]
+
+export const dataCreatePlaylist = [
+  {
+    title1: "TITLE",
+    title2: "QCASTER",
+    title3: "TOPIC",
+    title4: "QUESTIONS",
+    title5: "LENGTH",
+    title6: "ADD",
+    qcaster: "Myleene Klass",
+    topic: "Counselling",
+    title: "These are my top 10 questions that should be asked by every wife from her husband, once in a lifetime",
+    imgsrc: imgPopularSrc1,
+    questions: "2 of 10",
+    length: "9:46",
+  },
+  {
+    qcaster: "Myleene Klass",
+    topic: "Counselling",
+    title: "These are my top 10 questions that should be asked by every wife from her husband, once in a lifetime",
+    imgsrc: imgPopularSrc1,
+    questions: "2 of 10",
+    length: "9:46",
+  },
+  {
+    qcaster: "Myleene Klass",
+    topic: "Counselling",
+    title: "These are my top 10 questions that should be asked by every wife from her husband, once in a lifetime",
+    imgsrc: imgPopularSrc1,
+    questions: "2 of 10",
+    length: "9:46",
+  },
+  {
+    qcaster: "Myleene Klass",
+    topic: "Counselling",
+    title: "These are my top 10 questions that should be asked by every wife from her husband, once in a lifetime",
+    imgsrc: imgPopularSrc1,
+    questions: "2 of 10",
+    length: "9:46",
+  },
+  {
+    qcaster: "Myleene Klass",
+    topic: "Counselling",
+    title: "These are my top 10 questions that should be asked by every wife from her husband, once in a lifetime",
+    imgsrc: imgPopularSrc1,
+    questions: "2 of 10",
+    length: "9:46",
+  },
+  {
+    qcaster: "Myleene Klass",
+    topic: "Counselling",
+    title: "These are my top 10 questions that should be asked by every wife from her husband, once in a lifetime",
+    imgsrc: imgPopularSrc1,
+    questions: "2 of 10",
+    length: "9:46",
+  },
+]
+
+export const dataPlaylistCreate = Array(6).fill({
+  imgsrc: imgPopularSrc1,
+  title: "These are my top 10 questions that should be asked by every wife from her husband, once in a lifetime",
+  qcaster: "Myleene Klass ",
+  topic: "Counselling",
+  questions: "2 of 10",
+  length: "9:46",
+});

@@ -76,7 +76,7 @@ export default function StyledHeader(props) {
 
               <li className={css(styles.navigationButton)}>
                 <StyledButtonNavLink
-                  to={ROUTES.USER_RESPOND}
+                  to={ROUTES.USER_RESPOND_ALL}
                   isActive={!(pathname.indexOf(ROUTES.USER_RESPOND) < 0)}
                 >
                   Respond

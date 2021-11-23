@@ -31,8 +31,17 @@ import {
   UserChannelProfile,
   UserChannelProfileEdit,
   UserTeam,
-  UserRespond,
   UserMessenger,
+  UserRespondAll,
+  UserRespondSubscribedQcasters,
+  UserRespondSavedQcasts,
+  UserRespondMyFavourites,
+  UserRespondMyPlaylistsPlay,
+  UserRespondMyPlaylistsActive,
+  UserRespondMyPlaylistsCreate,
+  UserRespondResponsesQuestioner,
+  UserRespondResponsesContent,
+  UserRespondResponsesResponder,
 } from "../pages";
 
 import LayoutWrapper from "./LayoutWrapper";
@@ -203,15 +212,77 @@ class Routers extends React.PureComponent {
               />
 
               <AuthRoute
+                  path={ROUTES.USER_RESPOND_ALL}
+                  component={UserRespondAll}
+                  {...repeatedProps}
+              />
+
+              <AuthRoute
+                  path={ROUTES.USER_RESPOND_RESPONSES_QUESTIONER}
+                  component={UserRespondResponsesQuestioner}
+                  {...repeatedProps}
+              />
+
+              <AuthRoute
+                  path={ROUTES.USER_RESPOND_RESPONSES_CONTENT}
+                  component={UserRespondResponsesContent}
+                  {...repeatedProps}
+              />
+
+              <AuthRoute
+                  path={ROUTES.USER_RESPOND_RESPONSES_RESPONDER}
+                  component={UserRespondResponsesResponder}
+                  {...repeatedProps}
+              />
+
+              <AuthRoute
+                  path={ROUTES.USER_RESPOND_SUBSCRIBED_QCASTERS}
+                  component={UserRespondSubscribedQcasters}
+                  {...repeatedProps}
+              />
+
+              <AuthRoute
+                  path={ROUTES.USER_RESPOND_SAVED_QCASTS}
+                  component={UserRespondSavedQcasts}
+                  {...repeatedProps}
+              />
+
+              <AuthRoute
+                  path={ROUTES.USER_RESPOND_MY_FAVOURITES}
+                  component={UserRespondMyFavourites}
+                  {...repeatedProps}
+              />
+
+              <AuthRoute
+                  path={ROUTES.USER_RESPOND_MY_PLAYLISTS_ACTIVE}
+                  component={UserRespondMyPlaylistsActive}
+                  {...repeatedProps}
+              />
+
+              <AuthRoute
+                  path={ROUTES.USER_RESPOND_MY_PLAYLISTS_CREATE}
+                  component={UserRespondMyPlaylistsCreate}
+                  {...repeatedProps}
+              />
+
+              <AuthRoute
+                  path={ROUTES.USER_RESPOND_MY_PLAYLISTS_PLAY}
+                  component={UserRespondMyPlaylistsPlay}
+                  {...repeatedProps}
+              />
+
+              <AuthRoute
+                  path={ROUTES.USER_RESPOND_MY_PLAYLISTS_ACTIVE}
+                  component={UserRespondMyPlaylistsActive}
+                  {...repeatedProps}
+              />
+
+              <AuthRoute
                 path={ROUTES.USER_TEAM}
                 component={UserTeam}
                 {...repeatedProps}
               />
-              <AuthRoute
-                path={ROUTES.USER_RESPOND}
-                component={UserRespond}
-                {...repeatedProps}
-              />
+
               <AuthRoute
                 path={ROUTES.USER_MESSENGER}
                 component={UserMessenger}

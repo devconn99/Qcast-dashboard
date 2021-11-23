@@ -18,7 +18,7 @@ const UserHomeDiscoverMain = (props) => {
       <div className={css(styles.containerFeatured)}>
         <p className={css(styles.txtTitle)}> Featured </p>
 
-        <Row className={css(styles.cardFeaturedSubRow)}>
+        <Row>
           {dataFeatured.map((item, key) =>
             <Col xl={3} md={6} key={key} className={css(styles.cardFeaturedSubCol)}>
               <StyledCardFeature

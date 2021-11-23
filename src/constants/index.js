@@ -47,7 +47,7 @@ export const SERVER_TIME_ZONE = "Europe/London";
 
 export const MIGRATION_COMPLETED = "Migration is completed.";
 export const SAME_VEHICLE_ERROR =
-  "All selected driver must have same vehicles.";
+  "RespondPages selected driver must have same vehicles.";
 export const TASK_REQUIRED_ERROR = "No task provided.";
 export const DRIVER_REQUIRED_ERROR = "Please select driver.";
 export const DRIVER_SCHEDULE_INCOMPLETE_TIME = "Incomplete time.";
@@ -301,9 +301,19 @@ export const ROUTES = {
   USER_CHANNEL: "/user/channel",
   USER_CHANNEL_PROFILE: "/user/channel/profile",
   USER_CHANNEL_PROFILE_EDIT: "/user/channel/profileEdit",
-  
-  USER_TEAM: "/user/team",
   USER_RESPOND: "/user/respond",
+  USER_RESPOND_ALL: "/user/respond/all",
+  USER_RESPOND_SUBSCRIBED_QCASTERS: "/user/respond/subscribedQcasters",
+  USER_RESPOND_SAVED_QCASTS: "/user/respond/savedQcasts",
+  USER_RESPOND_RESPONSES_QUESTIONER: "/user/respond/responses/questioner",
+  USER_RESPOND_RESPONSES_CONTENT: "/user/respond/responses/content",
+  USER_RESPOND_RESPONSES_RESPONDER: "/user/respond/responses/responder",
+  USER_RESPOND_MY_FAVOURITES: "/user/respond/myFavourites",
+  USER_RESPOND_MY_PLAYLISTS_PLAY: "/user/respond/myPlaylists/play",
+  USER_RESPOND_MY_PLAYLISTS_CREATE: "/user/respond/myPlaylists/create",
+  USER_RESPOND_MY_PLAYLISTS_ACTIVE: "/user/respond/myPlaylists/active",
+
+  USER_TEAM: "/user/team",
   USER_MESSENGER: "/user/messenger",
   PRICING: "/pricing",
   FREE_TRIAL: "/free-trial",

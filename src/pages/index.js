@@ -33,8 +33,19 @@ import {
   UserChannelProfile,
   UserChannelProfileEdit,
 } from "./UserChannel";
+import {
+  UserRespondAll,
+  UserRespondMyFavourites,
+  UserRespondMyPlaylistsPlay,
+  UserRespondMyPlaylistsActive,
+  UserRespondMyPlaylistsCreate,
+  UserRespondResponsesContent,
+  UserRespondResponsesQuestioner,
+  UserRespondResponsesResponder,
+  UserRespondSavedQcasts,
+  UserRespondSubscribedQcasters,
+} from "./UserRespond";
 import UserTeam from "./UserTeam";
-import UserRespond from "./UserRespond";
 import UserMessenger from "./UserMessenger";
 
 export {
@@ -65,6 +76,15 @@ export {
   UserChannelProfile,
   UserChannelProfileEdit,
   UserTeam,
-  UserRespond,
+  UserRespondAll,
+  UserRespondMyFavourites,
+  UserRespondMyPlaylistsPlay,
+  UserRespondMyPlaylistsActive,
+  UserRespondMyPlaylistsCreate,
+  UserRespondResponsesContent,
+  UserRespondResponsesQuestioner,
+  UserRespondResponsesResponder,
+  UserRespondSavedQcasts,
+  UserRespondSubscribedQcasters,
   UserMessenger,
 };

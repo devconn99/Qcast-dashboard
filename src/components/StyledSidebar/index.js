@@ -8,6 +8,12 @@ import { ROUTES } from "../../constants";
 import styles from "./styles";
 
 import { StyledButtonNavLink } from "../../components";
+import includes from "validator/es/lib/util/includes";
+import {
+  StyledButtonNavLinkSwitch,
+  StyledButtonNavLinkSwitchPlaylists,
+  StyledButtonNavLinkSwitchRespons
+} from "../BasicComponents/StyledButtons";
 import { dataTeamMembers, dataJessica5, dataMessages } from "../../fakeapi";
 
 import img_dashboard from "../../assets/images/icons/dashboard.png";
@@ -40,11 +46,11 @@ const CustomScrollbars = props => (
 );
 
 export default function StyledSidebar(props) {
-  console.log("propssss", props);
   const location = useLocation();
   const loc = location.pathname;
   const params = queryString.parse(location.search);
   const btnStyle = css(styles.linkButton);
+	const searchRespond = "/user/respond";
   const btnStyleActive = css(styles.linkButtonActive);
 
   const [openDashboard, setOpenDashboard] = useState(true);
@@ -495,23 +501,24 @@ export default function StyledSidebar(props) {
           );
         default:
           return (
-            <div className={css(styles.container)}>
-              <div style={{ position: "fixed" }}>
-                <ul className={css(styles.menuContent)}>
-                  <li className={css(styles.navigationButton)}>
-                    <StyledButtonNavLink
-                      to={ROUTES.USER_HOME_DISCOVER_MAIN}
-                    >
-                      Discover
-                    </StyledButtonNavLink>
-                  </li>
-                  <li className={css(styles.navigationButton)}>
-                    <StyledButtonNavLink
-                      to={ROUTES.USER_HOME_TOPICS_MAIN}
-                    >
-                      Topics
-                    </StyledButtonNavLink>
-                  </li>
+              <div className={css(styles.containerLoc)}>
+      {(loc == "/user/home/discover" || loc == "/user/home/topics" || loc == "/user/home/qcasts" || loc == "/user/home/qcasters" || loc == "/user/home/1" || loc == "/user/home/2" || loc == "/user/home/3" || loc == "/user/home/4" || loc == "/user/home/5" || loc == "/user/home/6") &&
+          <div className={css(styles.container)} style={{ width: "285px", position: "fixed" }}>
+          <ul className={css(styles.menuContent)}>
+            <li className={css(styles.navigationButton)}>
+              <StyledButtonNavLink
+                to={ROUTES.USER_HOME_DISCOVER_MAIN}
+              >
+                Discover
+              </StyledButtonNavLink>
+            </li>
+            <li className={css(styles.navigationButton)}>
+              <StyledButtonNavLink
+                to={ROUTES.USER_HOME_TOPICS_MAIN}
+              >
+                Topics
+              </StyledButtonNavLink>
+            </li>
 
                   <li className={css(styles.navigationButton)}>
                     <StyledButtonNavLink
@@ -589,13 +596,66 @@ export default function StyledSidebar(props) {
                     </StyledButtonNavLink>
                   </li>
 
-                </ul>
-
-
-              </div>
-            </div>
-          );
+          </ul>
+        </div>
       }
-    })()
-  );
-}
+
+      {(loc.includes(searchRespond)) &&
+      <div className={css(styles.container)} style={{ width: "285px", position: "fixed" }}>
+        <ul className={css(styles.menuContent)}>
+          <li className={css(styles.navigationButton)}>
+            <StyledButtonNavLink
+                to={ROUTES.USER_RESPOND_ALL}
+            >
+              All
+            </StyledButtonNavLink>
+          </li>
+
+          <li className={css(styles.navigationButton)}>
+            <StyledButtonNavLink
+                to={ROUTES.USER_RESPOND_SUBSCRIBED_QCASTERS}
+            >
+              Subscribed Qcasters
+            </StyledButtonNavLink>
+          </li>
+
+          <li className={css(styles.navigationButton)}>
+            <StyledButtonNavLink
+                to={ROUTES.USER_RESPOND_SAVED_QCASTS}
+            >
+              Saved Qcasts
+            </StyledButtonNavLink>
+          </li>
+
+          <li className={css(styles.navigationButton)}>
+            <StyledButtonNavLinkSwitchRespons
+                to={ROUTES.USER_RESPOND_RESPONSES_QUESTIONER}
+            >
+              Responses
+            </StyledButtonNavLinkSwitchRespons>
+          </li>
+
+          <li className={css(styles.navigationButton)}>
+            <StyledButtonNavLink
+                to={ROUTES.USER_RESPOND_MY_FAVOURITES}
+            >
+              My Favourites
+            </StyledButtonNavLink>
+          </li>
+
+          <li className={css(styles.navigationButton)}>
+            <StyledButtonNavLinkSwitchPlaylists
+                to={ROUTES.USER_RESPOND_MY_PLAYLISTS_CREATE}
+            >
+              My Playlists
+            </StyledButtonNavLinkSwitchPlaylists>
+          </li>
+        </ul>
+      </div>
+      }
+        </div>
+        );
+      }
+      })()
+   );
+  }
