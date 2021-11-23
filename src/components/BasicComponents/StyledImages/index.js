@@ -27,6 +27,74 @@ export const StyledImageCircle = (props) => {
     </>
   )
 };
+
+export const StyledImageCirclePlaylist = (props) => {
+    const { imgSrc, otherprops ,text, playButton, buttonEffect} = props
+    return (
+        <>
+
+            <img
+                src={imgSrc}
+                alt={""}
+                className={css(styles.imgSmallPlaylist)}
+                {...otherprops}
+            />
+            {playButton == "small" &&
+            <div className={css(styles.playButtonSmall)} onClick={buttonEffect}>▶</div>
+            }
+            {playButton == "large" &&
+            <div className={css(styles.playButtonLarge)} onClick={buttonEffect}>▶</div>
+            }
+            <p className={css(styles.text)}>{text}</p>
+        </>
+    )
+};
+
+export const StyledImageCircleRespAll = (props) => {
+    const { imgSrc, size, otherprops ,text, playButton, buttonEffect} = props
+    return (
+        <>
+
+            <img
+                src={imgSrc}
+                alt={""}
+                className={css(styles.imgRespAll)}
+                {...otherprops}
+            />
+            {playButton == "small" &&
+            <div className={css(styles.playButtonSmall)} onClick={buttonEffect}>▶</div>
+            }
+            {playButton == "large" &&
+            <div className={css(styles.playButtonLarge)} onClick={buttonEffect}>▶</div>
+            }
+            <p className={css(styles.text)}>{text}</p>
+        </>
+    )
+};
+
+
+export const StyledImageCircleSmall = (props) => {
+    const { imgSrc, otherprops ,text, playButton, buttonEffect} = props
+    return (
+        <>
+
+            <img
+                src={imgSrc}
+                alt={""}
+                className={css(styles.imgSmall)}
+                {...otherprops}
+            />
+            {playButton == "small" &&
+            <div className={css(styles.playButtonSmall)} onClick={buttonEffect}>▶</div>
+            }
+            {playButton == "large" &&
+            <div className={css(styles.playButtonLarge)} onClick={buttonEffect}>▶</div>
+            }
+            <p className={css(styles.text)}>{text}</p>
+        </>
+    )
+};
+
 export const StyledImageCircleDark = (props) => {
   const { imgSrc, size, otherprops,text,ImgIcon,variant } = props
 
@@ -73,4 +141,45 @@ export const StyledImageFluid = (props) => {
       />
     </>
   )
+};
+
+
+
+
+export const StyledImageCirclePlaylists = (props) => {
+    const { imgSrc, size, otherprops } = props
+    return (
+        <>
+
+            <img
+                src={imgSrc}
+                alt={""}
+                className={
+                    size === "small" ?
+                        css(styles.imgPlSmallMain) :
+                        css(styles.imgPlSmallMain)}
+                {...otherprops}
+            />
+
+            <img
+                src={imgSrc}
+                alt={""}
+                className={
+                    size === "small" ?
+                        css(styles.imgPlSmall) :
+                        css(styles.imgPlLarge)}
+                {...otherprops}
+            />
+
+            <img
+                src={imgSrc}
+                alt={""}
+                className={
+                    size === "small" ?
+                        css(styles.imgPlSmall1) :
+                        css(styles.imgPlLarge1)}
+                {...otherprops}
+            />
+        </>
+    )
 };
