@@ -2,39 +2,17 @@ import React, { useState } from 'react';
 import { css } from "aphrodite";
 import styles from "./styles";
 import { Container, Navbar, Row, Col } from "react-bootstrap";
-import { Scrollbars } from 'react-custom-scrollbars';
+import ScrollContainer from 'react-indiana-drag-scroll'
 
-import {
-    dataDiscoverSearchResults,
-    dataMyFavouritesRespond,
-    dataMyFavouritesResponses,
-    dataMyFavouritesResponsesResponder, dataRespRe
+import { dataMyFavouritesResponsesResponder, dataRespRe
 } from "fakeapi";
 import {
-    StyledCardAllResponses,
-    StyledCardPopularLarge,
-    StyledCardResponses, StyledResponsedResp
+    StyledCardAllResponses, StyledResponsedResp
 } from "../../../../../components/BasicComponents/StyledCards";
 import queryString from "query-string";
 import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../../../../constants";
 import img_arrow_right from "assets/images/icons/arrow_right-black.png";
-
-const renderThumb = ({ style, ...props }) => {
-    const thumbStyle = {
-        borderRadius: 6,
-        backgroundColor: '#BBCFEA'
-    };
-    return <div style={{ ...style, ...thumbStyle }} {...props} />;
-};
-
-const CustomScrollbars = props => (
-    <Scrollbars
-        renderThumbHorizontal={renderThumb}
-        renderThumbVertical={renderThumb}
-        {...props}
-    />
-);
 
 const UserRespondResponsesResponder = (props) => {
     const params = queryString.parse(props.location.search);
@@ -88,7 +66,7 @@ const UserRespondResponsesResponder = (props) => {
                     )}
                 </div>
                 <div className={css(styles.subCardsRow0)}>
-                    <CustomScrollbars style={{ height: 220, width: 1100 }}>
+                    <ScrollContainer style={{ height: 220, width: 1100, cursor: "grab", }}>
                         <div className={css(styles.subCardsRow1)}>
                             {dataMyFavouritesResponsesResponder.map((item, key) =>
                                 <div className={css(styles.cardSavedRow)} key={key}>
@@ -105,7 +83,7 @@ const UserRespondResponsesResponder = (props) => {
                                 </div>
                             )}
                         </div>
-                    </CustomScrollbars>
+                    </ScrollContainer>
                     <div className={css(styles.subCardsRow2)}>
                         <div className={css(styles.subCardsRow2)}>
                             <img src={img_arrow_right} className={css(styles.arrow_icon)}></img>
@@ -129,7 +107,7 @@ const UserRespondResponsesResponder = (props) => {
                     )}
                 </div>
                 <div className={css(styles.subCardsRow0)}>
-                    <CustomScrollbars style={{ height: 220, width: 1100 }}>
+                    <ScrollContainer style={{ height: 220, width: 1100, cursor: "grab", }}>
                         <div className={css(styles.subCardsRow1)}>
                             {dataMyFavouritesResponsesResponder.map((item, key) =>
                                 <div className={css(styles.cardSavedRow)} key={key}>
@@ -146,7 +124,7 @@ const UserRespondResponsesResponder = (props) => {
                                 </div>
                             )}
                         </div>
-                    </CustomScrollbars>
+                    </ScrollContainer>
                     <div className={css(styles.subCardsRow2)}>
                         <div className={css(styles.subCardsRow2)}>
                             <img src={img_arrow_right} className={css(styles.arrow_icon)}></img>
@@ -170,7 +148,7 @@ const UserRespondResponsesResponder = (props) => {
                     )}
                 </div>
                 <div className={css(styles.subCardsRow0)}>
-                    <CustomScrollbars style={{ height: 220, width: 1100 }}>
+                    <ScrollContainer style={{ height: 220, width: 1100, cursor: "grab", }}>
                         <div className={css(styles.subCardsRow1)}>
                             {dataMyFavouritesResponsesResponder.map((item, key) =>
                                 <div className={css(styles.cardSavedRow)} key={key}>
@@ -187,7 +165,7 @@ const UserRespondResponsesResponder = (props) => {
                                 </div>
                             )}
                         </div>
-                    </CustomScrollbars>
+                    </ScrollContainer>
                     <div className={css(styles.subCardsRow2)}>
                         <div className={css(styles.subCardsRow2)}>
                             <img src={img_arrow_right} className={css(styles.arrow_icon)}></img>
@@ -211,7 +189,7 @@ const UserRespondResponsesResponder = (props) => {
                     )}
                 </div>
                 <div className={css(styles.subCardsRow0)}>
-                    <CustomScrollbars style={{ height: 220, width: 1100 }}>
+                    <ScrollContainer style={{ height: 220, width: 1100, cursor: "grab", }}>
                         <div className={css(styles.subCardsRow1)}>
                             {dataMyFavouritesResponsesResponder.map((item, key) =>
                                 <div className={css(styles.cardSavedRow)} key={key}>
@@ -228,7 +206,7 @@ const UserRespondResponsesResponder = (props) => {
                                 </div>
                             )}
                         </div>
-                    </CustomScrollbars>
+                    </ScrollContainer>
                     <div className={css(styles.subCardsRow2)}>
                         <div className={css(styles.subCardsRow2)}>
                             <img src={img_arrow_right} className={css(styles.arrow_icon)}></img>
@@ -252,7 +230,7 @@ const UserRespondResponsesResponder = (props) => {
                     )}
                 </div>
                 <div className={css(styles.subCardsRow0)}>
-                    <CustomScrollbars style={{ height: 220, width: 1100 }}>
+                    <ScrollContainer style={{ height: 220, width: 1100, cursor: "grab", }}>
                         <div className={css(styles.subCardsRow1)}>
                             {dataMyFavouritesResponsesResponder.map((item, key) =>
                                 <div className={css(styles.cardSavedRow)} key={key}>
@@ -269,7 +247,7 @@ const UserRespondResponsesResponder = (props) => {
                                 </div>
                             )}
                         </div>
-                    </CustomScrollbars>
+                    </ScrollContainer>
                     <div className={css(styles.subCardsRow2)}>
                         <div className={css(styles.subCardsRow2)}>
                             <img src={img_arrow_right} className={css(styles.arrow_icon)}></img>
