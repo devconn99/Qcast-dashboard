@@ -88,7 +88,7 @@ const UserRespondResponsesResponder = (props) => {
                     )}
                 </div>
                 <div className={css(styles.subCardsRow0)}>
-                    <CustomScrollbars style={{ height: 220, width: 1200 }}>
+                    <CustomScrollbars style={{ height: 220, width: 1100 }}>
                         <div className={css(styles.subCardsRow1)}>
                             {dataMyFavouritesResponsesResponder.map((item, key) =>
                                 <div className={css(styles.cardSavedRow)} key={key}>
@@ -129,7 +129,7 @@ const UserRespondResponsesResponder = (props) => {
                     )}
                 </div>
                 <div className={css(styles.subCardsRow0)}>
-                    <CustomScrollbars style={{ height: 220, width: 1200 }}>
+                    <CustomScrollbars style={{ height: 220, width: 1100 }}>
                         <div className={css(styles.subCardsRow1)}>
                             {dataMyFavouritesResponsesResponder.map((item, key) =>
                                 <div className={css(styles.cardSavedRow)} key={key}>
@@ -170,7 +170,7 @@ const UserRespondResponsesResponder = (props) => {
                     )}
                 </div>
                 <div className={css(styles.subCardsRow0)}>
-                    <CustomScrollbars style={{ height: 220, width: 1200 }}>
+                    <CustomScrollbars style={{ height: 220, width: 1100 }}>
                         <div className={css(styles.subCardsRow1)}>
                             {dataMyFavouritesResponsesResponder.map((item, key) =>
                                 <div className={css(styles.cardSavedRow)} key={key}>
@@ -211,7 +211,7 @@ const UserRespondResponsesResponder = (props) => {
                     )}
                 </div>
                 <div className={css(styles.subCardsRow0)}>
-                    <CustomScrollbars style={{ height: 220, width: 1200 }}>
+                    <CustomScrollbars style={{ height: 220, width: 1100 }}>
                         <div className={css(styles.subCardsRow1)}>
                             {dataMyFavouritesResponsesResponder.map((item, key) =>
                                 <div className={css(styles.cardSavedRow)} key={key}>
@@ -252,7 +252,7 @@ const UserRespondResponsesResponder = (props) => {
                     )}
                 </div>
                 <div className={css(styles.subCardsRow0)}>
-                    <CustomScrollbars style={{ height: 220, width: 1200 }}>
+                    <CustomScrollbars style={{ height: 220, width: 1100 }}>
                         <div className={css(styles.subCardsRow1)}>
                             {dataMyFavouritesResponsesResponder.map((item, key) =>
                                 <div className={css(styles.cardSavedRow)} key={key}>

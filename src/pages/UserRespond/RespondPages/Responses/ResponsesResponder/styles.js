@@ -30,8 +30,8 @@ export default StyleSheet.create({
     },
     subCardsRow2: {
         position: "absolute",
-        width: 200,
-        height: "80%",
+        width: 100,
+        height: "75%",
         top: 30,
         right: 0,
         background: "#FFFFFF40",
@@ -42,9 +42,9 @@ export default StyleSheet.create({
         width: "100%",
         height: "100%",
         paddingTop: 52,
-        paddingBottom: 72,
-        paddingRight: 90,
-        paddingLeft: 90,
+        paddingBottom: 55,
+        paddingRight: 38,
+        paddingLeft: 38,
     },
     linkButtonActive: {
         display: "block",
@@ -123,7 +123,7 @@ export default StyleSheet.create({
         marginTop: 20,
     },
     cardSavedRow1: {
-        width: 285,
+        width: 280,
         margin: 10,
     },
 
@@ -133,7 +133,8 @@ export default StyleSheet.create({
     },
 
     cardPopularSubCol: {
-        maxWidth: 450,
+        // maxWidth: 450,
+        width: 450,
     },
 
     cardRespMain: {
