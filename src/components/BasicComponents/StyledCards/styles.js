@@ -77,7 +77,7 @@ export default StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "start",
-    maxWidth: 275,
+    maxWidth: 360,
     padding: 0,
     fontFamily: "Poppins",
     borderRadius: 10,

@@ -340,7 +340,7 @@ export const StyledCardSavedQcast = (props) => {
 };
 
 export const StyledCardMyFavourites = (props) => {
-  const { imgSrc, txtContent, txtTitle } = props;
+  const { imgSrc, txtContent, txtNum, txtTitle } = props;
   return (
     <div className={css(styles.containerSavedQcasts)}>
       <div className={css(styles.imgSaved)}>
@@ -348,6 +348,7 @@ export const StyledCardMyFavourites = (props) => {
       </div>
       <div className={css(styles.respondText)}>
         <p className={css(styles.txtSavedQcastContent)}>{txtContent}</p>
+        <p className={css(styles.txtSavedQcastContent)}>{txtNum}</p>
         <p className={css(styles.txtSavedQcastTitle)}>{txtTitle}</p>
       </div>
     </div>

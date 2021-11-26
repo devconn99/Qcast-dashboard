@@ -11,6 +11,9 @@ export default StyleSheet.create({
         paddingTop: 20,
         paddingBottom: 20,
     },
+    subCardsRow1: {
+        display: "flex",
+    },
     imgSrc: {
         height: 160,
         width: 160,
@@ -60,10 +63,20 @@ export default StyleSheet.create({
     },
 
     cardRespondedRow: {
-        maxWidth: 160,
-        marginLeft: 10,
+        maxWidth: 220,
     },
-
+    cardPopularSubCol: {
+        width: 275,
+    },
+    cardPopularSubCol1: {
+        width: 360,
+    },
+    cardRespondedRow1: {
+        maxWidth: 300,
+    },
+    cardRespondedRow2: {
+        maxWidth: 380,
+    },
     rowBetween: {
         display: "flex",
         justifyContent: "space-between",
@@ -224,6 +237,12 @@ export default StyleSheet.create({
     },
 
     cardFavoritesCol: {
+        display: "flex",
+        justifyContent: "center",
+        maxWidth: 300,
+        width: "100%",
+    },
+    cardFavoritesCol1: {
         display: "flex",
         justifyContent: "center",
         width: "100%",
