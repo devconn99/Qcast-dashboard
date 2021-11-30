@@ -28,13 +28,13 @@ function PortalLogInAccount(props) {
   const password = useFormInput('');
   const [errorEmail, setErrorEmail] = useState(null);
 
-  useEffect(
-    () => window.scrollTo({
+  useEffect(() => {
+    window.scrollTo({
       top: 0,
       behavior: 'smooth'
-    }),
-    []
-  );
+    });
+    setTimeout(() => props.history.push(ROUTES.USER_HOME_DISCOVER_MAIN), 2000);
+  }, []);
 
   const handleLogin = () => {
     if (useremail.value === null) return;

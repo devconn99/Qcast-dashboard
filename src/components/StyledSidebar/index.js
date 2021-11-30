@@ -502,7 +502,7 @@ export default function StyledSidebar(props) {
         default:
           return (
               <div className={css(styles.containerLoc)}>
-      {(loc == "/user/home/discover" || loc == "/user/home/topics" || loc == "/user/home/qcasts" || loc == "/user/home/qcasters" || loc == "/user/home/1" || loc == "/user/home/2" || loc == "/user/home/3" || loc == "/user/home/4" || loc == "/user/home/5" || loc == "/user/home/6") &&
+      {(loc == "/user/home/discover" || loc == "/user/home/topics" || loc == "/user/home/qcasts" || loc == "/user/home/qcasts/viewQcast" || loc == "/user/home/qcasts/qcastReview" || loc == "/user/home/qcasters" || loc == "/user/home/qcasters/profile" || loc == "/user/home/1" || loc == "/user/home/2" || loc == "/user/home/3" || loc == "/user/home/4" || loc == "/user/home/5" || loc == "/user/home/6") &&
           <div className={css(styles.container)} style={{ width: "285px", position: "fixed" }}>
           <ul className={css(styles.menuContent)}>
             <li className={css(styles.navigationButton)}>

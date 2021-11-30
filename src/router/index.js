@@ -75,7 +75,7 @@ class Routers extends React.PureComponent {
           <Switch>
             <NoAuthRoute
               path={ROUTES.LINK_PORTAL_LOGIN}
-              component={LinkForPortalPages}
+              component={PortalLogInAccount}
               {...repeatedProps}
             />
             <NoAuthRoute
